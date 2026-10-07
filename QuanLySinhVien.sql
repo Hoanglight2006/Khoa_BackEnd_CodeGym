@@ -63,3 +63,32 @@ INSERT INTO Mark (SubId, StudentId, Mark, ExamTimes)
 VALUES (1, 1, 8, 1), 
        (1, 2, 10, 2), 
        (2, 1, 12, 1);
+
+-- ==============================================================
+-- BÀI THỰC HÀNH: TRUY VẤN DỮ LIỆU VỚI CSDL QUẢN LÝ SINH VIÊN
+-- ==============================================================
+
+-- 1. Hiển thị danh sách tất cả các học viên
+SELECT * FROM Student;
+
+-- 2. Hiển thị danh sách các học viên đang theo học (Status = true/1)
+SELECT * FROM Student 
+WHERE Status = true;
+
+-- 3. Hiển thị danh sách các môn học có thời gian học (Credit) nhỏ hơn 10
+SELECT * FROM Subject 
+WHERE Credit < 10;
+
+-- 4. Hiển thị danh sách học viên lớp A1 (sử dụng JOIN giữa Student và Class)
+SELECT S.StudentID, S.StudentName, C.ClassName 
+FROM Student S 
+JOIN Class C ON S.ClassID = C.ClassID 
+WHERE C.ClassName = 'A1';
+
+-- 5. Hiển thị điểm môn CF của các học viên (sử dụng JOIN giữa Student, Mark, Subject)
+SELECT S.StudentID, S.StudentName, Sub.SubName, M.Mark 
+FROM Student S 
+JOIN Mark M ON S.StudentID = M.StudentID 
+JOIN Subject Sub ON M.SubID = Sub.SubID 
+WHERE Sub.SubName = 'CF';
+
