@@ -11,7 +11,7 @@
 - **Kết quả áp dụng:** Dùng `ENUM` giúp giới hạn chính xác tập giá trị hợp lệ ngay từ tầng CSDL, tiết kiệm dung lượng lưu trữ và ngăn chặn việc chèn chuỗi sai lệch từ tầng backend.
 
 ### Prompt 3: Chặn hành vi kê đơn khi chưa khám xong ở tầng CSDL
-- **Câu hỏi:** "Làm thế nào để chặn việc chèn đơn thuốc (INSERT vào Prescriptions) nếu appointment_id tương ứng chưa có trạng thái COMPLETED?"
+- **Câu hỏi:** "Làm thế nào để chặn việc chèn đơn thuốc nếu appointment_id tương ứng chưa có trạng thái COMPLETED?"
 - **Mục tiêu:** Tìm giải pháp bảo vệ tính toàn vẹn dữ liệu mà khóa ngoại thông thường không kiểm soát được giá trị cột.
 - **Kết quả áp dụng:** Sử dụng `BEFORE INSERT TRIGGER` trên bảng `Prescriptions` để kiểm tra cột `status` của `Appointments`, nếu khác 'COMPLETED' thì dùng `SIGNAL SQLSTATE` để ném lỗi ngăn giao dịch.
 
