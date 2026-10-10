@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đọc Truyện - Cây Tre Trăm Đốt</title>
+    <!-- Bước 6: Nhúng styles.css vào trang HTML -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="story-wrapper" id="top">
+        <!-- Bước 4: Ảnh bìa/banner truyện đặt ở đầu trang -->
+        <div class="story-banner-container">
+            <svg class="story-banner" width="740" height="260" viewBox="0 0 740 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1e3c72" />
+                        <stop offset="100%" stop-color="#2a5298" />
+                    </linearGradient>
+                </defs>
+                <rect width="740" height="260" fill="url(#skyGrad)" rx="8"/>
+                <circle cx="630" cy="80" r="45" fill="#f6d365" opacity="0.85"/>
+                <!-- Họa tiết rừng tre -->
+                <rect x="70" y="40" width="14" height="220" fill="#48bb78" rx="4"/>
+                <rect x="95" y="20" width="12" height="240" fill="#38a169" rx="3"/>
+                <rect x="130" y="50" width="16" height="210" fill="#2f855a" rx="4"/>
+                <rect x="165" y="30" width="12" height="230" fill="#48bb78" rx="3"/>
+                <rect x="580" y="50" width="15" height="210" fill="#2f855a" opacity="0.6"/>
+                <rect x="610" y="25" width="12" height="235" fill="#38a169" opacity="0.6"/>
+                <!-- Chữ nghệ thuật Banner -->
+                <text x="370" y="125" fill="#ffffff" font-family="'Georgia', serif" font-size="34" font-weight="bold" text-anchor="middle">
+                    KHO TÀNG CỔ TÍCH VIỆT NAM
+                </text>
+                <text x="370" y="170" fill="#fbd38d" font-family="'Segoe UI', sans-serif" font-size="22" letter-spacing="2" text-anchor="middle">
+                    TRUYỆN DÂN GIAN: CÂY TRE TRĂM ĐỐT
+                </text>
+            </svg>
+        </div>
+
+        <!-- Bước 7: Tiêu đề truyện được căn giữa, định dạng font và màu sắc -->
+        <h1 class="story-title">Cây Tre Trăm Đốt</h1>
+        <p class="story-author">Truyện cổ tích dân gian Việt Nam</p>
+
+        <!-- Bước 1, Bước 5 & Bước 8: Khối mục lục sử dụng thẻ <h5> -->
+        <div class="table-of-contents">
+            <h3 class="toc-heading">Mục Lục Truyện</h3>
+            
+            <!-- Bước 3: Tạo liên kết anchor link trỏ đến từng phần nội dung tương ứng -->
+            <h5><a href="#chuong1">Chương 1: Lời hứa của phú ông và chàng trai nghèo cày thuê</a></h5>
+            <h5><a href="#chuong2">Chương 2: Thử thách tìm cây tre trăm đốt trong rừng sâu</a></h5>
+            <h5><a href="#chuong3">Chương 3: Câu thần chú kỳ diệu "Khắc nhập, khắc xuất"</a></h5>
+            <h5><a href="#chuong4">Chương 4: Bài học nhớ đời cho kẻ tham lam và đám cưới hạnh phúc</a></h5>
+        </div>
+
+        <!-- Bước 2: Nội dung ứng với từng mục lục -->
+        <div class="chapter-content">
+            <!-- Chương 1 -->
+            <h2 id="chuong1" class="chapter-title">Chương 1: Lời hứa của phú ông và chàng trai nghèo cày thuê</h2>
+            <p>
+                Ngày xưa, ở một ngôi làng nọ, có một chàng trai nghèo mồ côi tên là Khoai. Chàng vô cùng hiền lành, chịu thương chịu khó và có sức khỏe phi thường. Trong làng có một lão phú ông giàu có nhưng tính tình lại vô cùng keo kiệt và xảo quyệt. Thấy anh Khoai chăm chỉ, lão liền thuê anh về cày ruộng cho nhà mình.
+            </p>
+            <p>
+                Để anh Khoai dốc lòng dốc sức làm việc không tiếc công, lão phú ông liền ngon ngọt hứa hẹn: "Con cứ cố gắng chịu khó làm lụng cho ta trong ba năm. Hết hạn, ta sẽ gả con gái rượu của ta cho con!". Nghe lời đường mật của chủ nhà, anh Khoai mừng rỡ vô cùng, ngày đêm chăm chỉ cày bừa, làm cho gia tài của phú ông ngày càng thêm giàu có, ruộng vườn bạt ngàn thóc lúa.
+            </p>
+            <a href="#top" class="back-to-toc">↑ Về đầu trang / Mục lục</a>
+
+            <!-- Chương 2 -->
+            <h2 id="chuong2" class="chapter-title">Chương 2: Thử thách tìm cây tre trăm đốt trong rừng sâu</h2>
+            <p>
+                Thấm thoát ba năm chăm chỉ làm lụng đã trôi qua. Lúc này, con gái lão phú ông đã đến tuổi lấy chồng, nhưng lão không hề có ý định giữ lời hứa với chàng trai nghèo. Thay vào đó, lão ngấm ngầm nhận lời gả con gái cho một tên công tử giàu có ở làng bên và bí mật chuẩn bị tiệc cưới linh đình.
+            </p>
+            <p>
+                Để đánh lừa anh Khoai ra khỏi nhà nhằm tổ chức hôn lễ êm xuôi, lão phú ông gọi anh lại và bảo: "Ta không nuốt lời đâu, nhưng muốn cưới con gái ta, con phải lên rừng tìm cho bằng được một cây tre trăm đốt đem về đây làm đũa ăn tiệc cưới, lúc đó ta mới cử hành hôn lễ". Tin lời lão, anh Khoai vác dao lên rừng lặn lội tìm kiếm khắp nơi suốt mấy ngày đêm, nhưng tìm mỏi mắt cũng chỉ thấy những cây tre bình thường, chẳng có cây nào đủ một trăm đốt. Quá thất vọng và tủi thân, anh ngồi gục đầu bên bụi tre mà khóc nức nở.
+            </p>
+            <a href="#top" class="back-to-toc">↑ Về đầu trang / Mục lục</a>
+
+            <!-- Chương 3 -->
+            <h2 id="chuong3" class="chapter-title">Chương 3: Câu thần chú kỳ diệu "Khắc nhập, khắc xuất"</h2>
+            <p>
+                Bụt hiện lên thấy anh khóc lóc bèn hỏi rõ sự tình. Sau khi nghe anh Khoai kể lại ngọn ngành, Bụt mỉm cười hiền từ bảo anh đi chặt đủ một trăm đốt tre rời đem xếp thành hàng trước mặt. Bụt liền dạy anh đọc câu thần chú nhiệm màu: <em>"Khắc nhập, khắc nhập!"</em>. Kỳ lạ thay, vừa dứt lời thì một trăm đốt tre liền gắn kết lại thành một cây tre dài trăm đốt xanh mướt, thẳng tắp.
+            </p>
+            <p>
+                Khi anh toan vác cây tre về làng thì cây tre quá dài, không thể luồn qua những con đường ngoằn ngoèo rậm rạp của cánh rừng. Thấy anh lại lo lắng, Bụt liền bảo anh hô lớn: <em>"Khắc xuất, khắc xuất!"</em>. Ngay lập tức, cây tre trăm đốt lại rời ra thành từng khúc riêng biệt. Anh Khoai mừng rỡ cảm tạ Bụt, nhanh chóng bó các đốt tre lại rồi gánh một mạch về làng.
+            </p>
+            <a href="#top" class="back-to-toc">↑ Về đầu trang / Mục lục</a>
+
+            <!-- Chương 4 -->
+            <h2 id="chuong4" class="chapter-title">Chương 4: Bài học nhớ đời cho kẻ tham lam và đám cưới hạnh phúc</h2>
+            <p>
+                Về đến nhà phú ông, anh Khoai thấy tiệc cưới của con gái lão với công tử nhà giàu đang diễn ra tưng bừng, trống dong cờ mở. Biết mình bị lừa gạt, anh bình tĩnh đặt gánh tre xuống giữa sân và mời phú ông cùng họ hàng ra xem. Lão phú ông nhìn thấy đống tre vụn liền cười khẩy chế giễu: "Ta bảo mang cây tre trăm đốt, cớ sao lại mang đống củi vụn này về?".
+            </p>
+            <p>
+                Anh Khoai liền đọc thần chú: "Khắc nhập, khắc nhập!". Các đốt tre lập tức dính chặt lại với nhau, kéo dài ra và hút luôn lão phú ông cùng người con rể quý dính chặt vào thân tre, không tài nào gỡ ra được. Cả hai đau đớn van lạy xin tha mạng và hứa hủy bỏ hôn lễ, gả con gái cho anh Khoai đúng như lời giao ước. Lúc bấy giờ, anh mới khoan thai đọc: "Khắc xuất, khắc xuất!" để giải thoát cho họ. Sau đó, đám cưới hạnh phúc của anh Khoai và con gái phú ông được tổ chức rộn ràng trong niềm vui mừng của cả dân làng.
+            </p>
+            <a href="#top" class="back-to-toc">↑ Về đầu trang / Mục lục</a>
+        </div>
+    </div>
+</body>
+</html>
