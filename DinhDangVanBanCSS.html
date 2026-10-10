@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập định dạng văn bản bằng CSS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px 20px;
+            color: #333333;
+        }
+
+        .article-container {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid #1e88e5;
+        }
+
+        /* 1. Tiêu đề chính: Căn giữa, chữ hoa, màu xanh, kích thước lớn */
+        h1.article-title {
+            color: #1565c0;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        /* 2. Tiêu đề phụ / Trích dẫn mở đầu: Căn giữa, chữ nghiêng, màu xám đậm */
+        p.subtitle {
+            text-align: center;
+            font-style: italic;
+            font-size: 15px;
+            color: #555555;
+            margin-bottom: 30px;
+        }
+
+        /* 3. Tiêu đề mục: Căn trái, viền dưới trang trí */
+        h2.section-title {
+            color: #0d47a1;
+            font-size: 20px;
+            text-align: left;
+            border-bottom: 2px solid #e3f2fd;
+            padding-bottom: 6px;
+            margin-top: 25px;
+        }
+
+        /* 4. Đoạn văn bản chính: Thụt đầu dòng, căn đều 2 bên, khoảng cách dòng thoáng */
+        p.content {
+            font-size: 16px;
+            color: #2c3e50;
+            line-height: 1.8;
+            text-align: justify;
+            text-indent: 35px; /* Thụt lề đầu dòng */
+            margin-bottom: 16px;
+        }
+
+        /* 5. Đoạn nhấn mạnh / Ghi chú đặc biệt: Chữ nghiêng, màu đỏ mận, có nền */
+        p.highlight {
+            font-style: italic;
+            font-size: 15px;
+            color: #c62828;
+            text-align: justify;
+            text-indent: 25px;
+            line-height: 1.7;
+            background-color: #ffebee;
+            padding: 12px 18px;
+            border-left: 4px solid #ef5350;
+            border-radius: 4px;
+        }
+
+        /* 6. Chữ ký / Tác giả: Căn lề phải, in nghiêng, màu xám */
+        p.author {
+            text-align: right;
+            font-style: italic;
+            font-size: 14px;
+            color: #616161;
+            font-weight: bold;
+            margin-top: 30px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="article-container">
+        <h1 class="article-title">Vẻ Đẹp Ngôn Từ Trong Lập Trình</h1>
+        <p class="subtitle">"Code không chỉ để máy tính thực thi, mà còn để con người thấu hiểu."</p>
+
+        <h2 class="section-title">1. Nghệ thuật viết mã sạch (Clean Code)</h2>
+        <p class="content">
+            Lập trình hiện đại đòi hỏi sự kết hợp hài hòa giữa logic chặt chẽ và tư duy thẩm mỹ. Mỗi dòng mã nguồn được viết ra tựa như một câu văn trong tác phẩm nghệ thuật, nơi mà sự sáng sủa, mạch lạc và tinh tế đóng vai trò quyết định đến sức sống lâu dài của phần mềm.
+        </p>
+
+        <p class="content">
+            Khi xây dựng giao diện người dùng, việc định dạng văn bản đúng chuẩn bằng CSS giúp người đọc tiếp nhận thông tin một cách tự nhiên, giảm bớt sự mệt mỏi cho thị giác và tạo nên trải nghiệm người dùng hoàn hảo trên mọi thiết bị.
+        </p>
+
+        <p class="highlight">
+            Lưu ý: Việc lựa chọn kiểu chữ, màu sắc tương phản hợp lý cùng khoảng cách giãn dòng (line-height) phù hợp là chìa khóa vàng giúp nội dung website trở nên dễ đọc và chuyên nghiệp hơn.
+        </p>
+
+        <h2 class="section-title">2. Lời kết</h2>
+        <p class="content">
+            Hãy luôn rèn luyện thói quen trau chuốt từng thuộc tính định dạng. Từ độ thụt đầu dòng (text-indent), căn lề văn bản (text-align) đến kiểu dáng chữ (font-style), tất cả hòa quyện tạo nên diện mạo ấn tượng cho trang web của bạn.
+        </p>
+
+        <p class="author">— Tác giả: Hoàng Đình —</p>
+    </div>
+</body>
+</html>
