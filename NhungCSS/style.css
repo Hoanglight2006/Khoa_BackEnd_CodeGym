@@ -1,0 +1,19 @@
+/* =====================================================================
+   PHẦN 3: EXTERNAL STYLE SHEET
+   File CSS độc lập bên ngoài, được nhúng vào HTML qua thẻ <link>
+   ===================================================================== */
+
+/* Tiêu đề sử dụng external style */
+.external-title {
+    color: #2e7d32; /* Màu xanh lá đậm */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+}
+
+/* Đoạn văn bản sử dụng external style */
+.external-paragraph {
+    color: #e65100; /* Màu cam đậm */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}

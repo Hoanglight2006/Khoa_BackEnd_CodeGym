@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập nhúng CSS vào trang web (Inline, Internal, External)</title>
+
+    <!-- =================================================================
+         PHẦN 3: NHÚNG EXTERNAL CSS (Liên kết file CSS bên ngoài)
+         ================================================================= -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- =================================================================
+         PHẦN 2: NHÚNG INTERNAL CSS (Viết trong thẻ <style> thuộc <head>)
+         ================================================================= -->
+    <style>
+        /* Định dạng chung cho trang web */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px 40px;
+            background-color: #f9f9fb;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .section-box {
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background-color: #fafafa;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 13px;
+            font-weight: bold;
+            color: #fff;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .badge-inline { background-color: #d32f2f; }
+        .badge-internal { background-color: #1976d2; }
+        .badge-external { background-color: #388e3c; }
+
+        /* Style định dạng cho Phần 2 (Internal Style) */
+        .internal-title {
+            color: #1565c0; /* Xanh dương đậm */
+            font-size: 24px;
+        }
+
+        .internal-paragraph {
+            color: #6a1b9a; /* Tím đậm */
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BÀI THỰC HÀNH: 3 CÁCH NHÚNG CSS VÀO HTML</h1>
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 25px;">
+
+        <!-- PHẦN 1: INLINE-STYLE -->
+        <div class="section-box">
+            <span class="badge badge-inline">Phần 1: Inline-Style</span>
+            <!-- Sử dụng thuộc tính style trực tiếp trên thẻ -->
+            <h1 style="color: #d32f2f; font-size: 24px;">Tiêu đề sử dụng Inline-Style</h1>
+            <p style="color: #00796b; font-size: 16px; line-height: 1.6;">
+                Đây là đoạn văn bản được định dạng trực tiếp bằng thuộc tính <code>style="..."</code> ngay bên trong thẻ <code>&lt;p&gt;</code>.
+            </p>
+        </div>
+
+        <!-- PHẦN 2: INTERNAL-STYLE -->
+        <div class="section-box">
+            <span class="badge badge-internal">Phần 2: Internal-Style</span>
+            <!-- Áp dụng class được khai báo trong thẻ <style> ở phần <head> -->
+            <h1 class="internal-title">Tiêu đề sử dụng Internal-Style</h1>
+            <p class="internal-paragraph">
+                Đây là đoạn văn bản được định dạng bằng CSS nội bộ, khai báo thông qua cặp thẻ <code>&lt;style&gt;</code> đặt trong phần <code>&lt;head&gt;</code> của trang.
+            </p>
+        </div>
+
+        <!-- PHẦN 3: EXTERNAL-STYLE -->
+        <div class="section-box">
+            <span class="badge badge-external">Phần 3: External-Style</span>
+            <!-- Áp dụng class được khai báo trong file style.css riêng biệt -->
+            <h1 class="external-title">Tiêu đề sử dụng External-Style</h1>
+            <p class="external-paragraph">
+                Đây là đoạn văn bản được định dạng bằng file CSS độc lập bên ngoài (<code>style.css</code>), được nhúng vào thông qua thẻ <code>&lt;link rel="stylesheet" href="style.css"&gt;</code>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
