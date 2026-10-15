@@ -1,0 +1,200 @@
+/* Reset cơ bản và font chữ hệ thống */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #333333;
+}
+
+/* Khung chứa trung tâm cho trang web */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* ================= 1. HEADER ================= */
+header {
+    background-color: #1a252f;
+    color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+header .tagline {
+    font-size: 14px;
+    color: #bdc3c7;
+    font-style: italic;
+}
+
+/* ================= 2. NAV (Thanh điều hướng) ================= */
+nav {
+    background-color: #2c3e50;
+    border-bottom: 3px solid #e74c3c;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #e74c3c;
+}
+
+/* ================= 3. KHUNG NỘI DUNG CHÍNH (CONTENT WRAPPER) ================= */
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 25px 20px;
+    min-height: 450px;
+}
+
+/* ================= 4. SECTION & ARTICLE ================= */
+section {
+    flex: 7; /* Chiếm khoảng 70% chiều rộng */
+}
+
+article {
+    background-color: #fafbfc;
+    border: 1px solid #e1e4e8;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+article h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+article .meta {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 14px;
+}
+
+article p {
+    margin-bottom: 10px;
+    color: #4a4a4a;
+    text-align: justify;
+}
+
+article code {
+    background-color: #eaeded;
+    color: #c0392b;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* ================= 5. ASIDE (Thanh bên) ================= */
+aside {
+    flex: 3; /* Chiếm khoảng 30% chiều rộng */
+}
+
+.widget {
+    background-color: #fcfcfc;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.widget h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #e5e5e5;
+}
+
+.widget ul li:last-child {
+    border-bottom: none;
+}
+
+.widget ul li a {
+    color: #2980b9;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.widget ul li a:hover {
+    text-decoration: underline;
+    color: #e74c3c;
+}
+
+.widget p {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* ================= 6. FOOTER ================= */
+footer {
+    background-color: #1a252f;
+    color: #95a5a6;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    border-top: 1px solid #34495e;
+}
+
+footer p {
+    margin: 4px 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        text-align: center;
+        border-bottom: 1px solid #34495e;
+    }
+}

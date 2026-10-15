@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiết kế bố cục trang web với HTML5 và CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Phần Header: Tiêu đề và biểu tượng của trang web -->
+        <header>
+            <h1>THỜI BÁO CÔNG NGHỆ</h1>
+            <p class="tagline">Cập nhật tin tức công nghệ và lập trình mới nhất</p>
+        </header>
+
+        <!-- Phần Nav: Thanh menu điều hướng chính -->
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#">Lập trình Web</a></li>
+                <li><a href="#">Trí tuệ nhân tạo</a></li>
+                <li><a href="#">Cơ sở dữ liệu</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+
+        <!-- Khung chứa nội dung chính và thanh bên -->
+        <div class="content-wrapper">
+            <!-- Phần Section: Chứa các bài viết (article) chính -->
+            <section>
+                <article>
+                    <h2>Tìm hiểu về các thẻ ngữ nghĩa (Semantic Elements) trong HTML5</h2>
+                    <p class="meta">Đăng ngày 15/10/2026 | Tác giả: CodeGym</p>
+                    <p>
+                        HTML5 giới thiệu nhiều thẻ ngữ nghĩa mới như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, 
+                        <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> và <code>&lt;footer&gt;</code>. 
+                        Các thẻ này giúp cấu trúc trang web trở nên rõ ràng, mạch lạc, dễ hiểu đối với cả lập trình viên và máy tìm kiếm (SEO).
+                    </p>
+                    <p>
+                        Thay vì sử dụng các thẻ <code>&lt;div&gt;</code> chung chung với nhiều class và id phức tạp, 
+                        thẻ ngữ nghĩa mô tả chính xác mục đích và vai trò của từng vùng nội dung trên trang.
+                    </p>
+                </article>
+
+                <article>
+                    <h2>Kỹ thuật thiết kế bố cục (Layout) hiện đại với CSS</h2>
+                    <p class="meta">Đăng ngày 14/10/2026 | Tác giả: Ban Biên Tập</p>
+                    <p>
+                        Để xây dựng một bố cục trang web đẹp mắt và chuẩn mực, việc kết hợp CSS với HTML5 là không thể thiếu. 
+                        Từ các kỹ thuật căn chỉnh truyền thống bằng <code>float</code>, <code>clear</code> cho đến 
+                        <code>Flexbox</code> và <code>CSS Grid</code>, nhà phát triển có thể tạo ra các giao diện đa dạng, 
+                        thích ứng linh hoạt trên nhiều kích thước màn hình khác nhau.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Phần Aside: Thanh bên chứa nội dung bổ trợ, tin nhanh, widget -->
+            <aside>
+                <div class="widget">
+                    <h3>Tin Nổi Bật</h3>
+                    <ul>
+                        <li><a href="#">Lộ trình trở thành Fullstack Developer 2026</a></li>
+                        <li><a href="#">Tối ưu hóa cơ sở dữ liệu MySQL cho dự án lớn</a></li>
+                        <li><a href="#">Xu hướng phát triển trí tuệ nhân tạo trong năm nay</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3>Giới thiệu</h3>
+                    <p>
+                        Trang web thực hành thiết kế bố cục chuẩn theo cấu trúc HTML5 và định dạng phong cách giao diện với CSS.
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Phần Footer: Chân trang chứa thông tin bản quyền và liên hệ -->
+        <footer>
+            <p>&copy; 2026 Bản quyền thuộc về CodeGym Việt Nam. All rights reserved.</p>
+            <p>Email liên hệ: info@codegym.vn | Địa chỉ: Hà Nội, Việt Nam</p>
+        </footer>
+    </div>
+</body>
+</html>
