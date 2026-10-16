@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thế Giới Hoạt Hình Thiếu Nhi - Phim Hoạt Hình Chọn Lọc</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts cho giao diện trẻ em tươi sáng, thân thiện -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== KHUNG BAO CHÍNH (MAIN WRAPPER) ==================== -->
+    <div class="wrapper">
+
+        <!-- 1. PHẦN HEADER (CỐ ĐỊNH KHI CUỘN TRANG) -->
+        <div class="header">
+            <div class="header-inner">
+                <!-- Logo bên trái -->
+                <div class="header-logo">
+                    <div class="logo-icon">🎬</div>
+                    <div class="logo-titles">
+                        <span class="logo-main">KIDS CARTOON</span>
+                        <span class="logo-sub">Phim Hoạt Hình Giáo Dục Thuyết Minh</span>
+                    </div>
+                </div>
+
+                <!-- Thanh tìm kiếm phim theo tên -->
+                <div class="header-search">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm phim hoạt hình theo tên...">
+                    <button type="button" class="btn-search" title="Tìm kiếm">🔍 Tìm</button>
+                </div>
+
+                <!-- Tiện ích an toàn trẻ em -->
+                <div class="header-badge">
+                    <span class="badge-safe">🛡️ 100% An Toàn & Lành Mạnh</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. PHẦN HEAD-LINK (MENU ĐIỀU HƯỚNG TRANG) -->
+        <div class="head-link">
+            <div class="head-link-inner">
+                <a href="#" class="nav-link active">🏠 Trang Chủ</a>
+                <a href="#" class="nav-link">✨ Mới Cập Nhật</a>
+                <a href="#" class="nav-link">🔥 Xem Nhiều Nhất</a>
+                <a href="#" class="nav-link">🗣️ Thuyết Minh Tiếng Việt</a>
+                <a href="#" class="nav-link">🎨 Phim Cổ Tích & Bài Học</a>
+                <a href="#" class="nav-link">📞 Liên Hệ - Đóng Góp</a>
+            </div>
+        </div>
+
+        <!-- 3. PHẦN CONTENT (BỐ CỤC CHÍNH CHIA 2 CỘT: LEFT & RIGHT) -->
+        <div class="content-container">
+
+            <!-- 3.1. LEFT CONTENT: MENU CHỨA DANH SÁCH CÁC VIDEO CÓ SẴN -->
+            <div class="left-content">
+                <div class="playlist-header">
+                    <h3>📺 DANH SÁCH PHIM HOẠT HÌNH</h3>
+                    <span class="video-count">5 video tuyển chọn</span>
+                </div>
+
+                <div class="video-playlist" id="videoPlaylist">
+                    <!-- Item 1 (Mặc định chọn ban đầu - Dùng thẻ VIDEO HTML5) -->
+                    <div class="playlist-item active" 
+                         data-type="html5"
+                         data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                         data-poster="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&h=450&q=80"
+                         data-title="Chú Thỏ Dũng Cảm (Big Buck Bunny) - Bản Thuyết Minh HD"
+                         data-views="1,250,800 lượt xem"
+                         data-desc="Câu chuyện hài hước và giàu tính nhân văn về chú thỏ khổng lồ tốt bụng bảo vệ các loài sinh vật nhỏ bé trong khu rừng trước những trò nghịch ngợm của nhóm sóc tinh quái. Phim giúp các em hiểu về tình bạn và tinh thần quả cảm.">
+                        <div class="thumb-wrapper">
+                            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=200&h=120&q=80" alt="Chú Thỏ Dũng Cảm">
+                            <span class="duration-badge">09:56</span>
+                            <span class="player-type-tag tag-video">&lt;video&gt;</span>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-title">Chú Thỏ Dũng Cảm (Big Buck Bunny)</div>
+                            <div class="item-meta">⭐ Thuyết Minh HD · 1.2M lượt xem</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 (Dùng nhúng YouTube IFRAME) -->
+                    <div class="playlist-item" 
+                         data-type="youtube"
+                         data-src="https://www.youtube.com/embed/aqz-KE-bpKQ?autoplay=1"
+                         data-title="Thế Giới Cổ Tích: Hành Trình Khám Phá Rừng Xanh (YouTube)"
+                         data-views="980,500 lượt xem"
+                         data-desc="Bộ phim hoạt hình 3D màu sắc rực rỡ với âm thanh sống động, mở ra cánh cửa diệu kỳ giúp các bé khám phá thiên nhiên tươi đẹp và học hỏi nhiều bài học cuộc sống bổ ích.">
+                        <div class="thumb-wrapper">
+                            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=200&h=120&q=80" alt="Hành Trình Khám Phá">
+                            <span class="duration-badge">10:34</span>
+                            <span class="player-type-tag tag-youtube">YouTube</span>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-title">Hành Trình Khám Phá Rừng Xanh</div>
+                            <div class="item-meta">⭐ YouTube Thuyết Minh · 980K xem</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 (Dùng thẻ VIDEO HTML5) -->
+                    <div class="playlist-item" 
+                         data-type="html5"
+                         data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+                         data-poster="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&h=450&q=80"
+                         data-title="Giấc Mơ Kỳ Thú (Elephant's Dream) - Lồng Tiếng Việt"
+                         data-views="740,200 lượt xem"
+                         data-desc="Một bộ phim hoạt hình ngắn phiêu lưu không gian kỳ ảo, kích thích trí tưởng tượng và khả năng sáng tạo vô tận của trẻ thơ. Đạt giải thưởng phim hoạt hình giáo dục xuất sắc.">
+                        <div class="thumb-wrapper">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=200&h=120&q=80" alt="Giấc Mơ Kỳ Thú">
+                            <span class="duration-badge">10:53</span>
+                            <span class="player-type-tag tag-video">&lt;video&gt;</span>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-title">Giấc Mơ Kỳ Thú (Elephant's Dream)</div>
+                            <div class="item-meta">⭐ FullHD 1080p · 740K lượt xem</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 (Dùng nhúng YouTube IFRAME) -->
+                    <div class="playlist-item" 
+                         data-type="youtube"
+                         data-src="https://www.youtube.com/embed/e-ORhEE9VVg?autoplay=1"
+                         data-title="Bài Học Lễ Phép Và Tình Yêu Thương Gia Đình (YouTube)"
+                         data-views="1,560,000 lượt xem"
+                         data-desc="Phim hoạt hình giáo dục lễ giáo, rèn luyện kỹ năng sống cho các bé mầm non và tiểu học. Giúp các em biết vâng lời ông bà cha mẹ, yêu thương bạn bè và biết nói lời cảm ơn, xin lỗi.">
+                        <div class="thumb-wrapper">
+                            <img src="https://images.unsplash.com/photo-1472457897821-70d3819a0e24?auto=format&fit=crop&w=200&h=120&q=80" alt="Bài Học Lễ Phép">
+                            <span class="duration-badge">08:15</span>
+                            <span class="player-type-tag tag-youtube">YouTube</span>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-title">Bài Học Lễ Phép & Yêu Thương</div>
+                            <div class="item-meta">⭐ Giáo dục sớm · 1.5M lượt xem</div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 (Dùng thẻ VIDEO HTML5) -->
+                    <div class="playlist-item" 
+                         data-type="html5"
+                         data-src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                         data-poster="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&h=450&q=80"
+                         data-title="Đội Cứu Hộ Tí Hon - Thử Thách Rừng Rậm"
+                         data-views="620,000 lượt xem"
+                         data-desc="Những pha cứu hộ thông minh, dạy cho trẻ nhỏ bài học về phòng cháy chữa cháy, kỹ năng thoát hiểm và tinh thần hợp tác làm việc nhóm một cách vui nhộn, lôi cuốn.">
+                        <div class="thumb-wrapper">
+                            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=200&h=120&q=80" alt="Đội Cứu Hộ">
+                            <span class="duration-badge">05:22</span>
+                            <span class="player-type-tag tag-video">&lt;video&gt;</span>
+                        </div>
+                        <div class="item-info">
+                            <div class="item-title">Đội Cứu Hộ Tí Hon - Thử Thách Rừng</div>
+                            <div class="item-meta">⭐ Kỹ năng sống · 620K lượt xem</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3.2. RIGHT CONTENT: KHUNG PHÁT VIDEO CHÍNH ĐƯỢC CHỌN -->
+            <div class="right-content">
+                <div class="video-player-container">
+                    
+                    <!-- Khung trình phát HTML5 Video -->
+                    <div id="html5PlayerBox" class="player-box">
+                        <video id="mainVideoPlayer" controls poster="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&h=450&q=80">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ thẻ <code>&lt;video&gt;</code> HTML5.
+                        </video>
+                    </div>
+
+                    <!-- Khung trình phát YouTube iFrame (ẩn mặc định, kích hoạt khi chọn video youtube) -->
+                    <div id="youtubePlayerBox" class="player-box" style="display: none;">
+                        <iframe id="mainYoutubeIframe" 
+                                width="100%" 
+                                height="100%" 
+                                src="" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+
+                </div>
+
+                <!-- Thông tin chi tiết về phim đang phát -->
+                <div class="video-details-card">
+                    <div class="details-header">
+                        <h2 id="videoTitle" class="video-title">Chú Thỏ Dũng Cảm (Big Buck Bunny) - Bản Thuyết Minh HD</h2>
+                        <div class="video-actions">
+                            <button class="btn-action">❤️ Yêu Thích</button>
+                            <button class="btn-action">↗️ Chia Sẻ</button>
+                            <button class="btn-action">⭐ Đánh Giá (5/5)</button>
+                        </div>
+                    </div>
+
+                    <div class="video-stats-bar">
+                        <span id="videoViews" class="stat-badge">👁️ 1,250,800 lượt xem</span>
+                        <span class="stat-badge">🔊 Audio: Tiếng Việt Thuyết Minh</span>
+                        <span class="stat-badge">📺 Chuẩn: Full HD 1080p</span>
+                        <span class="stat-badge badge-green">🚀 Tải Nhanh Chống Giật (Direct Link)</span>
+                    </div>
+
+                    <div class="video-description-box">
+                        <div class="desc-heading">📖 Tóm tắt nội dung & Ý nghĩa giáo dục:</div>
+                        <p id="videoDesc" class="desc-text">
+                            Câu chuyện hài hước và giàu tính nhân văn về chú thỏ khổng lồ tốt bụng bảo vệ các loài sinh vật nhỏ bé trong khu rừng trước những trò nghịch ngợm của nhóm sóc tinh quái. Phim giúp các em hiểu về tình bạn và tinh thần quả cảm.
+                        </p>
+                    </div>
+
+                    <div class="video-features-box">
+                        <div class="feature-item">
+                            <span class="feature-icon">🚫</span>
+                            <div>
+                                <strong>Không Quảng Cáo</strong>
+                                <p>Website cam kết không gắn bất kỳ quảng cáo giật gân, độc hại nào.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🇻🇳</span>
+                            <div>
+                                <strong>100% Thuyết Minh Tiếng Việt</strong>
+                                <p>Giúp trẻ nhỏ dễ dàng theo dõi, phát triển vốn từ ngữ trong sáng.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">⚡</span>
+                            <div>
+                                <strong>Server Trực Tiếp Tốc Độ Cao</strong>
+                                <p>Tải nhanh, mượt mà trên mọi thiết bị và đường truyền internet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 4. PHẦN FOOTER (CHÂN TRANG) -->
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <div class="footer-logo">🎬 KIDS CARTOON</div>
+                    <p>Website xem phim hoạt hình thiếu nhi chọn lọc, an toàn và bổ ích cho sự phát triển toàn diện của trẻ em.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>TIÊU CHÍ HOẠT ĐỘNG</h4>
+                    <p>✔️ Nội dung có tính giáo dục cao</p>
+                    <p>✔️ 100% Audio Thuyết Minh Tiếng Việt</p>
+                    <p>✔️ Hoàn toàn không chứa quảng cáo thương mại</p>
+                </div>
+                <div class="footer-col">
+                    <h4>BẢN QUYỀN & LIÊN HỆ</h4>
+                    <p>Học viên: Dương Đình Hoàng - CodeGym</p>
+                    <p>Mục tiêu: Thực hành layout DIV, CSS, thẻ &lt;video&gt; và YouTube &lt;iframe&gt;</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 KIDS CARTOON - Bản quyền thuộc về Dự Án Hoạt Hình Cho Trẻ Em. Bảo lưu mọi quyền.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script đổi video tương tác mượt mà -->
+    <script src="script.js"></script>
+</body>
+</html>
