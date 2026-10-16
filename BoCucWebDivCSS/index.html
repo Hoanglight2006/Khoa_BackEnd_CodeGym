@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập sử dụng DIV và CSS để tạo bố cục trang web Responsive</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font chữ hiện đại -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== KHUNG BAO TOÀN TRANG (WRAPPER / CONTAINER) ==================== -->
+    <div class="layout-wrapper">
+
+        <!-- 1. PHẦN ĐẦU TRANG (HEADER) DÙNG THẺ DIV -->
+        <div class="header-div">
+            <div class="logo-box">
+                <span class="logo-badge">CG</span>
+                <span class="logo-text">TECH PORTAL</span>
+            </div>
+            <div class="header-banner">
+                <h1>HỆ THỐNG TIN TỨC VÀ KIẾN THỨC LẬP TRÌNH</h1>
+                <p>Thực hành thiết kế bố cục website Responsive bằng thẻ DIV và CSS</p>
+            </div>
+        </div>
+
+        <!-- 2. THANH MENU ĐIỀU HƯỚNG (NAV BAR) DÙNG THẺ DIV -->
+        <div class="nav-div">
+            <div class="nav-container">
+                <a href="#" class="nav-item active">Trang chủ</a>
+                <a href="#" class="nav-item">Lập trình Web</a>
+                <a href="#" class="nav-item">Cơ sở dữ liệu</a>
+                <a href="#" class="nav-item">Khoa học dữ liệu</a>
+                <a href="#" class="nav-item">Kinh nghiệm IT</a>
+                <a href="#" class="nav-item">Liên hệ</a>
+            </div>
+        </div>
+
+        <!-- 3. PHẦN BỐ CỤC NỘI DUNG CHÍNH (CONTENT WRAPPER CHIA CỘT) -->
+        <div class="main-body-div">
+
+            <!-- CỘT TRÁI: SIDEBAR TRÁI (LEFT SIDEBAR) -->
+            <div class="sidebar-left-div">
+                <div class="box-card">
+                    <div class="box-title">DANH MỤC KHÓA HỌC</div>
+                    <div class="box-content">
+                        <ul class="custom-list">
+                            <li><a href="#">HTML5 & CSS3 Cơ bản</a></li>
+                            <li><a href="#">JavaScript & DOM</a></li>
+                            <li><a href="#">Bố cục Flexbox & Grid</a></li>
+                            <li><a href="#">Lập trình Java Core</a></li>
+                            <li><a href="#">Spring Boot & MySQL</a></li>
+                            <li><a href="#">ReactJS / Next.js</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="box-card">
+                    <div class="box-title">TÀI NGUYÊN NỔI BẬT</div>
+                    <div class="box-content">
+                        <p class="resource-item">📌 Ebook HTML/CSS Tiếng Việt</p>
+                        <p class="resource-item">💡 CheatSheet CSS Layout</p>
+                        <p class="resource-item">🚀 Kho bài tập CodeGym</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CỘT GIỮA: NỘI DUNG CHÍNH (MAIN CONTENT) -->
+            <div class="main-content-div">
+                <div class="box-card post-card">
+                    <h2>Kỹ thuật xây dựng bố cục Web Responsive bằng DIV và CSS</h2>
+                    <div class="post-meta">Đăng ngày: 16/10/2026 | Tác giả: Dương Đình Hoàng | Chuyên mục: Front-End</div>
+                    
+                    <p class="intro-lead">
+                        Thẻ <code>&lt;div&gt;</code> (viết tắt của Division) là phần tử khối (block-level element) quan trọng nhất trong HTML để phân chia các khối giao diện, kết hợp với các kỹ thuật định dạng CSS hiện đại như <strong>Flexbox</strong> hoặc <strong>CSS Grid</strong> để tạo nên bố cục website co giãn linh hoạt (Responsive Web Design).
+                    </p>
+
+                    <div class="image-showcase">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&h=450&q=80" alt="Bố cục web responsive">
+                        <div class="image-caption">Hình minh họa: Thiết kế giao diện đa thiết bị linh hoạt (Desktop, Tablet, Mobile)</div>
+                    </div>
+
+                    <h3>1. Các nguyên tắc cốt lõi khi tạo bố cục bằng DIV</h3>
+                    <ul class="article-list">
+                        <li><strong>Phân chia phân vùng rõ ràng:</strong> Luôn có một khung bọc chính (wrapper/container), phân tách rạch ròi giữa Header, Navigation, Content và Footer.</li>
+                        <li><strong>Đặt tên class ngữ nghĩa (Semantic Class Names):</strong> Đặt tên class phản ánh chính xác vai trò như <code>.header-div</code>, <code>.sidebar-left-div</code>, <code>.main-content-div</code>.</li>
+                        <li><strong>Kiểm soát mô hình hộp (Box-Sizing):</strong> Luôn sử dụng <code>box-sizing: border-box;</code> để chiều rộng của phần tử tính gộp cả padding và border, tránh bị vỡ layout khi chia phần trăm độ rộng.</li>
+                    </ul>
+
+                    <h3>2. Tối ưu tính thích ứng Responsive</h3>
+                    <p>
+                        Trên màn hình rộng (Desktop), nội dung được phân chia thành 3 cột cân đối. Khi thu nhỏ màn hình xuống máy tính bảng hoặc điện thoại thông minh, các thuộc tính <code>@media (max-width: ...)</code> sẽ tự động điều chỉnh các khối <code>&lt;div&gt;</code> xếp chồng (stack) lên nhau một cách khoa học, bảo đảm trải nghiệm đọc tốt nhất cho người dùng.
+                    </p>
+
+                    <div class="code-highlight-box">
+                        <div class="code-title">Ví dụ cấu trúc Media Query tạo Responsive:</div>
+                        <pre><code>@media (max-width: 900px) {
+  .main-body-div {
+    flex-direction: column; /* Chuyển từ hàng ngang sang cột dọc */
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Bài viết phụ 2 -->
+                <div class="box-card post-card">
+                    <h2>Tại sao Responsive Web Design lại bắt buộc trong phát triển web hiện đại?</h2>
+                    <div class="post-meta">Đăng ngày: 15/10/2026 | Lượt xem: 1,420</div>
+                    <p>
+                        Ngày nay hơn 60% lưu lượng truy cập Internet đến từ các thiết bị di động. Một trang web có bố cục responsive không chỉ giúp giữ chân người dùng mà còn được các công cụ tìm kiếm như Google ưu tiên đánh giá cao về xếp hạng SEO (Mobile-first indexing).
+                    </p>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: SIDEBAR PHẢI (RIGHT SIDEBAR) -->
+            <div class="sidebar-right-div">
+                <div class="box-card">
+                    <div class="box-title">TIN XEM NHIỀU NHẤT</div>
+                    <div class="box-content">
+                        <div class="news-item">
+                            <span class="news-num">1</span>
+                            <a href="#">Lộ trình trở thành Fullstack Developer 2026</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-num">2</span>
+                            <a href="#">Top 10 mẹo CSS Flexbox dân chuyên hay dùng</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-num">3</span>
+                            <a href="#">Tối ưu hóa hiệu năng ứng dụng Spring Boot</a>
+                        </div>
+                        <div class="news-item">
+                            <span class="news-num">4</span>
+                            <a href="#">Thiết kế cơ sở dữ liệu chuẩn hóa 3NF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box-card ad-card">
+                    <div class="box-title">ĐỐI TÁC ĐÀO TẠO</div>
+                    <div class="box-content text-center">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&h=180&q=80" alt="CodeGym" class="ad-img">
+                        <div class="ad-desc"><strong>Học Lập Trình Thực Chiến CodeGym</strong></div>
+                        <p class="ad-sub">Từ con số 0 đến lập trình viên chuyên nghiệp</p>
+                        <a href="https://codegym.vn" target="_blank" class="ad-btn">Tìm hiểu ngay</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 4. CHÂN TRANG (FOOTER) DÙNG THẺ DIV -->
+        <div class="footer-div">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-heading">VỀ CHÚNG TÔI</div>
+                    <p>Cổng thông tin chia sẻ kiến thức công nghệ và lập trình chất lượng cao dành cho cộng đồng học viên CodeGym.</p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-heading">LIÊN KẾT NHANH</div>
+                    <p><a href="#">Chính sách bảo mật</a></p>
+                    <p><a href="#">Điều khoản sử dụng</a></p>
+                    <p><a href="#">Hỗ trợ học tập</a></p>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-heading">THÔNG TIN LIÊN HỆ</div>
+                    <p>📍 Địa chỉ: CodeGym Việt Nam</p>
+                    <p>📧 Email: contact@codegym.vn</p>
+                    <p>📞 Hotline: 0246 253 8829</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bố cục Web Responsive - Thực hành thẻ DIV & CSS. Bảo lưu mọi quyền.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

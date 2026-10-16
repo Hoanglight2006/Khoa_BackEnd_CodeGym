@@ -1,0 +1,537 @@
+/* ==========================================================================
+   BÀI TẬP: LUYỆN TẬP SỬ DỤNG THẺ DIV VÀ CSS TẠO BỐ CỤC TRANG WEB
+   Yêu cầu: Bố cục phân chia bằng DIV, thẩm mỹ cao và chuẩn Responsive
+   ========================================================================== */
+
+/* 1. THIẾT LẬP TOÀN CỤC & RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Rất quan trọng để padding không làm tăng kích thước phần tử */
+}
+
+:root {
+    --primary-color: #1e3a8a;      /* Xanh Navy chủ đạo */
+    --primary-light: #3b82f6;      /* Xanh biển sáng */
+    --accent-color: #f59e0b;       /* Màu cam tạo điểm nhấn */
+    --bg-page: #f1f5f9;            /* Xám nhạt nền trang */
+    --bg-card: #ffffff;            /* Trắng nền thẻ */
+    --text-main: #1e293b;          /* Màu chữ chính đậm */
+    --text-muted: #64748b;         /* Màu chữ phụ xám */
+    --border-color: #e2e8f0;       /* Đường viền */
+    --radius-base: 8px;            /* Độ bo tròn góc */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* KHUNG BAO CHÍNH CỦA WEBSITE */
+.layout-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--bg-card);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    border-radius: var(--radius-base);
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   2. KHỐI DIV PHẦN ĐẦU TRANG (HEADER-DIV)
+   ========================================================================== */
+.header-div {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 30px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-badge {
+    background: var(--accent-color);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+.header-banner h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.header-banner p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   3. KHỐI DIV THANH MENU ĐIỀU HƯỚNG (NAV-DIV)
+   ========================================================================== */
+.nav-div {
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 16px;
+}
+
+.nav-item {
+    color: #cbd5e1;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    display: inline-block;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.06);
+    text-decoration: none;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.nav-item.active {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/* ==========================================================================
+   4. KHỐI DIV BỐ CỤC CHÍNH (MAIN-BODY-DIV)
+   Áp dụng Flexbox để chia làm 3 cột trên Desktop
+   ========================================================================== */
+.main-body-div {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background-color: var(--bg-page);
+    min-height: 600px;
+}
+
+/* Khối Thẻ chung (box-card) */
+.box-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-base);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.box-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.box-title {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    letter-spacing: 0.5px;
+}
+
+.box-content {
+    padding: 16px;
+}
+
+/* 4.1. CỘT TRÁI (SIDEBAR-LEFT-DIV) */
+.sidebar-left-div {
+    width: 240px;
+    flex-shrink: 0; /* Không co lại khi màn hình nhỏ */
+}
+
+.custom-list {
+    list-style: none;
+}
+
+.custom-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.custom-list li:last-child {
+    border-bottom: none;
+}
+
+.custom-list li a {
+    color: var(--text-main);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.custom-list li a:hover {
+    color: var(--primary-light);
+    transform: translateX(4px);
+    text-decoration: none;
+}
+
+.resource-item {
+    font-size: 14px;
+    padding: 6px 0;
+    color: var(--text-main);
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* 4.2. CỘT GIỮA: NỘI DUNG CHÍNH (MAIN-CONTENT-DIV) */
+.main-content-div {
+    flex: 1; /* Chiếm toàn bộ không gian còn lại ở giữa */
+    min-width: 0; /* Tránh tràn layout với code block */
+}
+
+.post-card {
+    padding: 24px;
+}
+
+.post-card h2 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    line-height: 1.35;
+}
+
+.post-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.intro-lead {
+    font-size: 15px;
+    color: #334155;
+    margin-bottom: 18px;
+    line-height: 1.7;
+}
+
+.image-showcase {
+    margin: 18px 0;
+    border-radius: var(--radius-base);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.image-showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-caption {
+    background-color: #f8fafc;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-style: italic;
+    padding: 8px 12px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.post-card h3 {
+    font-size: 17px;
+    color: var(--text-main);
+    margin: 18px 0 10px 0;
+}
+
+.article-list {
+    margin-left: 20px;
+    margin-bottom: 16px;
+}
+
+.article-list li {
+    margin-bottom: 8px;
+    font-size: 14.5px;
+}
+
+.code-highlight-box {
+    background-color: #0f172a;
+    border-radius: var(--radius-base);
+    padding: 16px;
+    margin: 16px 0;
+    color: #f8fafc;
+    overflow-x: auto;
+}
+
+.code-title {
+    font-size: 12px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.code-highlight-box pre code {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    color: #38bdf8;
+    line-height: 1.5;
+}
+
+/* 4.3. CỘT PHẢI (SIDEBAR-RIGHT-DIV) */
+.sidebar-right-div {
+    width: 270px;
+    flex-shrink: 0;
+}
+
+.news-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-num {
+    background-color: var(--primary-light);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.news-item a {
+    color: var(--text-main);
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.news-item a:hover {
+    color: var(--primary-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ad-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.ad-desc {
+    font-size: 15px;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.ad-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.ad-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #0f172a !important;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 18px;
+    border-radius: 50px;
+    text-decoration: none !important;
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+    transition: transform 0.15s, background-color 0.15s;
+}
+
+.ad-btn:hover {
+    transform: scale(1.04);
+    background-color: #d97706;
+}
+
+/* ==========================================================================
+   5. KHỐI DIV PHẦN CHÂN TRANG (FOOTER-DIV)
+   ========================================================================== */
+.footer-div {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 30px 24px 16px 24px;
+    border-top: 4px solid var(--primary-light);
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #334155;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-heading {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    font-size: 13.5px;
+    line-height: 1.8;
+}
+
+.footer-col a {
+    color: #94a3b8;
+}
+
+.footer-col a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 16px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (TÍNH TƯƠNG THÍCH MỌI KÍCH THƯỚC MÀN HÌNH)
+   Sử dụng Media Queries để tự động căn chỉnh bố cục các khối DIV
+   ========================================================================== */
+
+/* 6.1. Tablet hoặc màn hình trung bình (Dưới 992px) */
+@media screen and (max-width: 992px) {
+    .layout-wrapper {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .main-body-div {
+        flex-wrap: wrap; /* Cho phép các cột rớt xuống hàng mới */
+        gap: 16px;
+        padding: 16px;
+    }
+
+    /* Đưa cột trái và cột phải xuống dưới hoặc điều chỉnh chiều rộng */
+    .sidebar-left-div {
+        width: 100%;
+        order: 2; /* Đặt dưới nội dung chính */
+    }
+
+    .main-content-div {
+        width: 100%;
+        order: 1; /* Ưu tiên nội dung bài viết lên đầu */
+    }
+
+    .sidebar-right-div {
+        width: 100%;
+        order: 3;
+    }
+}
+
+/* 6.2. Thiết bị di động / Mobile (Dưới 768px) */
+@media screen and (max-width: 768px) {
+    .header-div {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 16px;
+        gap: 14px;
+    }
+
+    .logo-box {
+        justify-content: center;
+    }
+
+    .nav-container {
+        flex-direction: column; /* Menu chuyển thành dạng cột dọc */
+        padding: 0;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid #334155;
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .post-card {
+        padding: 16px;
+    }
+
+    .post-card h2 {
+        font-size: 19px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
