@@ -1,0 +1,79 @@
+/* ==========================================================================
+   RESPONSIVE IMAGE GALLERY - STYLESHEET
+   Kết hợp Bootstrap Grid System và CSS tùy biến khung ảnh Gallery
+   ========================================================================== */
+
+body {
+    background-color: #f8fafc;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+}
+
+.gallery-heading {
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+}
+
+.gallery-subheading {
+    font-weight: 500;
+}
+
+.breakpoint-guide .badge {
+    margin: 4px;
+    padding: 8px 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* KHUNG CHỨA ẢNH GALLERY THEO BẢN MẪU DEMO */
+div.gallery {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hiệu ứng khi rê chuột vào ảnh */
+div.gallery:hover {
+    border: 1px solid #777;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+}
+
+div.gallery a {
+    display: block;
+    overflow: hidden;
+    background-color: #000;
+}
+
+div.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+div.gallery:hover img {
+    transform: scale(1.05);
+    opacity: 0.95;
+}
+
+/* Phần mô tả chú thích ảnh bên dưới */
+div.desc {
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.5;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
