@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao diện Facebook giản lược - Fixed Header & Sidebar</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons hoặc SVG nội tuyến -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== 1. FIXED HEADER ==================== -->
+    <header class="header">
+        <!-- Header bên trái: Logo & Thanh tìm kiếm -->
+        <div class="header-left">
+            <a href="#" class="logo" title="Facebook">
+                <svg viewBox="0 0 36 36" class="fb-icon" fill="url(#fb-grad)" width="40" height="40">
+                    <defs>
+                        <linearGradient id="fb-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#1877f2"/>
+                            <stop offset="100%" stop-color="#0e5aae"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M20.181 35.87C29.094 34.791 36 27.202 36 18c0-9.941-8.059-18-18-18S0 8.059 0 18c0 8.332 5.662 15.342 13.374 17.348v-12.27h-4.46V18h4.46v-3.79c0-4.402 2.622-6.833 6.633-6.833 1.921 0 3.931.343 3.931.343v4.322h-2.215c-2.182 0-2.862 1.354-2.862 2.744V18h4.871l-.779 5.078h-4.092v12.792z" fill="#1877f2"></path>
+                    <path d="M22.713 23.078l.779-5.078h-4.871v-3.211c0-1.39.68-2.744 2.862-2.744h2.215V7.723s-2.01-.343-3.931-.343c-4.011 0-6.633 2.431-6.633 6.833V18h-4.46v5.078h4.46v12.27c.85.132 1.718.2 2.626.2.908 0 1.776-.068 2.626-.2v-12.27h4.092z" fill="#ffffff"></path>
+                </svg>
+            </a>
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <input type="text" placeholder="Tìm kiếm trên Facebook">
+            </div>
+        </div>
+
+        <!-- Header ở giữa: Các tab điều hướng chính -->
+        <nav class="header-middle">
+            <a href="#" class="nav-tab active" title="Trang chủ">
+                <svg viewBox="0 0 28 28" width="28" height="28" fill="currentColor">
+                    <path d="M25.825 12.29C25.824 12.289 25.823 12.288 25.822 12.287L14.975 2.502C14.707 2.261 14.359 2.128 14 2.128C13.641 2.128 13.293 2.261 13.025 2.502L2.178 12.287C2.177 12.288 2.176 12.289 2.175 12.29C1.745 12.678 1.5 13.228 1.5 13.817C1.5 14.945 2.416 15.861 3.544 15.861H4.5V23.75C4.5 24.993 5.507 26 6.75 26H10.5C11.19 26 11.75 25.44 11.75 24.75V18.75C11.75 18.06 12.31 17.5 13 17.5H15C15.69 17.5 16.25 18.06 16.25 18.75V24.75C16.25 25.44 16.81 26 17.5 26H21.25C22.493 26 23.5 24.993 23.5 23.75V15.861H24.456C25.584 15.861 26.5 14.945 26.5 13.817C26.5 13.228 26.255 12.678 25.825 12.29Z"/>
+                </svg>
+            </a>
+            <a href="#" class="nav-tab" title="Video">
+                <svg viewBox="0 0 28 28" width="28" height="28" fill="currentColor">
+                    <path d="M23.5 4H4.5C3.12 4 2 5.12 2 6.5V21.5C2 22.88 3.12 24 4.5 24H23.5C24.88 24 26 22.88 26 21.5V6.5C26 5.12 24.88 4 23.5 4ZM11.5 18.5V9.5L18.5 14L11.5 18.5Z"/>
+                </svg>
+            </a>
+            <a href="#" class="nav-tab" title="Marketplace">
+                <svg viewBox="0 0 28 28" width="28" height="28" fill="currentColor">
+                    <path d="M24.5 9H3.5L2 14.5V24C2 24.55 2.45 25 3 25H25C25.55 25 26 24.55 26 24V14.5L24.5 9ZM14 20C11.79 20 10 18.21 10 16H18C18 18.21 16.21 20 14 20ZM25.36 7.15L22.65 3.32C22.25 2.76 21.59 2.42 20.89 2.42H7.11C6.41 2.42 5.75 2.76 5.35 3.32L2.64 7.15C2.22 7.74 2.47 8.57 3.16 8.84C3.27 8.89 3.38 8.91 3.5 8.91H24.5C24.62 8.91 24.73 8.89 24.84 8.84C25.53 8.57 25.78 7.74 25.36 7.15Z"/>
+                </svg>
+            </a>
+            <a href="#" class="nav-tab" title="Nhóm">
+                <svg viewBox="0 0 28 28" width="28" height="28" fill="currentColor">
+                    <path d="M14 14C16.76 14 19 11.76 19 9C19 6.24 16.76 4 14 4C11.24 4 9 6.24 9 9C9 11.76 11.24 14 14 14ZM14 16.5C10.67 16.5 4 18.17 4 21.5V24H24V21.5C24 18.17 17.33 16.5 14 16.5Z"/>
+                </svg>
+            </a>
+            <a href="#" class="nav-tab" title="Trò chơi">
+                <svg viewBox="0 0 28 28" width="28" height="28" fill="currentColor">
+                    <path d="M22.5 7H5.5C3.57 7 2 8.57 2 10.5V17.5C2 19.43 3.57 21 5.5 21H8.35L10.35 24.33C10.74 24.98 11.43 25.37 12.18 25.37C12.44 25.37 12.7 25.32 12.95 25.21L16.27 23.75C16.66 23.58 16.92 23.2 16.92 22.78V21H22.5C24.43 21 26 19.43 26 17.5V10.5C26 8.57 24.43 7 22.5 7ZM10 15H8V17H6V15H4V13H6V11H8V13H10V15ZM19 16C18.17 16 17.5 15.33 17.5 14.5C17.5 13.67 18.17 13 19 13C19.83 13 20.5 13.67 20.5 14.5C20.5 15.33 19.83 16 19 16ZM22 13C21.17 13 20.5 12.33 20.5 11.5C20.5 10.67 21.17 10 22 10C22.83 10 23.5 10.67 23.5 11.5C23.5 12.33 22.83 13 22 13Z"/>
+                </svg>
+            </a>
+        </nav>
+
+        <!-- Header bên phải: Các nút tiện ích & Tài khoản -->
+        <div class="header-right">
+            <button class="circle-btn" title="Menu">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <circle cx="5" cy="5" r="2.5"/><circle cx="12" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/>
+                    <circle cx="5" cy="12" r="2.5"/><circle cx="12" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/>
+                    <circle cx="5" cy="19" r="2.5"/><circle cx="12" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/>
+                </svg>
+            </button>
+            <button class="circle-btn" title="Messenger">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.03 2 11C2 13.83 3.44 16.34 5.68 17.9V22L9.58 19.87C10.36 20.09 11.16 20.2 12 20.2C17.52 20.2 22 16.17 22 11.2C22 6.03 17.52 2 12 2ZM13.06 14.31L10.5 11.58L5.5 14.31L10.94 8.52L13.5 11.25L18.5 8.52L13.06 14.31Z"/>
+                </svg>
+            </button>
+            <button class="circle-btn" title="Thông báo">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.9 22 12 22ZM18 16V11C18 7.93 16.37 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.64 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16Z"/>
+                </svg>
+                <span class="badge">3</span>
+            </button>
+            <div class="user-avatar-header" title="Tài khoản cá nhân">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Avatar">
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== KHUNG BỐ CỤC CHÍNH ==================== -->
+    <div class="main-layout">
+        
+        <!-- ==================== 2. SIDEBAR TRÁI (LEFT SIDEBAR) ==================== -->
+        <aside class="sidebar sidebar-left">
+            <ul class="sidebar-menu">
+                <li class="menu-item user-profile">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Avatar" class="avatar-small">
+                    <span class="menu-text font-bold">Dương Đình Hoàng</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-friends">👥</span>
+                    <span class="menu-text">Bạn bè</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-groups">👨‍👩‍👧‍👦</span>
+                    <span class="menu-text">Nhóm</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-market">🏪</span>
+                    <span class="menu-text">Marketplace</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-watch">📺</span>
+                    <span class="menu-text">Video</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-memories">⏰</span>
+                    <span class="menu-text">Kỷ niệm</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-saved">🔖</span>
+                    <span class="menu-text">Đã lưu</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-pages">🚩</span>
+                    <span class="menu-text">Trang</span>
+                </li>
+                <li class="menu-item">
+                    <span class="icon-wrapper icon-events">📅</span>
+                    <span class="menu-text">Sự kiện</span>
+                </li>
+                <li class="menu-item">
+                    <span class="circle-more">▼</span>
+                    <span class="menu-text">Xem thêm</span>
+                </li>
+            </ul>
+
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">Lối tắt của bạn</div>
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=60&h=60&q=80" alt="Shortcut" class="shortcut-thumb">
+                    <span class="menu-text">Học Lập Trình Web Fullstack</span>
+                </li>
+                <li class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=60&h=60&q=80" alt="Shortcut" class="shortcut-thumb">
+                    <span class="menu-text">Cộng đồng Backend Developers</span>
+                </li>
+                <li class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=60&h=60&q=80" alt="Shortcut" class="shortcut-thumb">
+                    <span class="menu-text">CodeGym Việt Nam</span>
+                </li>
+            </ul>
+
+            <footer class="sidebar-footer">
+                <p>Quyền riêng tư · Điều khoản · Quảng cáo · Cookie · Meta © 2026</p>
+            </footer>
+        </aside>
+
+        <!-- ==================== 3. NỘI DUNG CHÍNH (NEWS FEED) ==================== -->
+        <main class="feed-content">
+            
+            <!-- Phần Tin (Stories) -->
+            <section class="stories-container">
+                <!-- Thẻ tạo tin của bạn -->
+                <div class="story-card create-story">
+                    <div class="story-bg-top">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&h=300&q=80" alt="Avatar">
+                    </div>
+                    <div class="create-story-btn">+</div>
+                    <span class="story-author">Tạo tin</span>
+                </div>
+
+                <!-- Các tin của bạn bè -->
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&h=600&q=80" class="story-bg" alt="Story">
+                    <div class="story-avatar">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&h=80&q=80" alt="Friend">
+                    </div>
+                    <span class="story-author">Nguyễn Văn An</span>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=400&h=600&q=80" class="story-bg" alt="Story">
+                    <div class="story-avatar">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=80&h=80&q=80" alt="Friend">
+                    </div>
+                    <span class="story-author">Trần Thị Mai</span>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=400&h=600&q=80" class="story-bg" alt="Story">
+                    <div class="story-avatar">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=80&h=80&q=80" alt="Friend">
+                    </div>
+                    <span class="story-author">Lê Hoàng Nam</span>
+                </div>
+            </section>
+
+            <!-- Hộp Tạo bài viết mới -->
+            <section class="card create-post-card">
+                <div class="create-post-top">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80" alt="Avatar" class="avatar-small">
+                    <div class="post-input-box">Hoàng ơi, bạn đang nghĩ gì thế?</div>
+                </div>
+                <hr class="card-divider">
+                <div class="create-post-actions">
+                    <button class="action-btn text-danger">
+                        <span class="btn-icon">📹</span> Video trực tiếp
+                    </button>
+                    <button class="action-btn text-success">
+                        <span class="btn-icon">🖼️</span> Ảnh/video
+                    </button>
+                    <button class="action-btn text-warning">
+                        <span class="btn-icon">😊</span> Cảm xúc/hoạt động
+                    </button>
+                </div>
+            </section>
+
+            <!-- Bài viết 1 (Post 1) -->
+            <article class="card post-card">
+                <!-- Header của bài viết -->
+                <div class="post-header">
+                    <div class="post-user-info">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&h=100&q=80" alt="User Avatar" class="avatar-small">
+                        <div>
+                            <div class="post-author-name">
+                                <strong>Nguyễn Văn An</strong>
+                                <span class="post-tag">đang cảm thấy hào hứng.</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>3 giờ trước</span> · <span title="Công khai">🌐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="post-menu-btn" title="Tùy chọn">•••</button>
+                </div>
+
+                <!-- Nội dung chữ của bài viết -->
+                <div class="post-caption">
+                    Vừa hoàn thành xong bài tập thiết kế bố cục Fixed Header và Sidebar với HTML5 & CSS thuần! Cảm giác nắm vững các thuộc tính vị trí <code>position: fixed</code> thật tuyệt vời 🎉💻
+                </div>
+
+                <!-- Ảnh bài viết -->
+                <div class="post-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&h=700&q=80" alt="Lập trình web" class="post-image">
+                </div>
+
+                <!-- Thống kê tương tác (Like, Comment, Share) -->
+                <div class="post-stats">
+                    <div class="reactions-count">
+                        <span class="reaction-badge like-badge">👍</span>
+                        <span class="reaction-badge heart-badge">❤️</span>
+                        <span class="stats-text">142</span>
+                    </div>
+                    <div class="comments-shares-count">
+                        <span>28 bình luận</span> · <span>5 lượt chia sẻ</span>
+                    </div>
+                </div>
+
+                <hr class="card-divider">
+
+                <!-- Các nút bấm tương tác -->
+                <div class="post-actions">
+                    <button class="post-btn">
+                        <span>👍</span> Thích
+                    </button>
+                    <button class="post-btn">
+                        <span>💬</span> Bình luận
+                    </button>
+                    <button class="post-btn">
+                        <span>↗️</span> Chia sẻ
+                    </button>
+                </div>
+            </article>
+
+            <!-- Bài viết 2 (Post 2) -->
+            <article class="card post-card">
+                <div class="post-header">
+                    <div class="post-user-info">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=100&h=100&q=80" alt="Page Avatar" class="avatar-small">
+                        <div>
+                            <div class="post-author-name">
+                                <strong>CodeGym Đà Nẵng</strong>
+                                <span class="verified-badge">✔</span>
+                            </div>
+                            <div class="post-meta">
+                                <span>5 giờ trước</span> · <span>🌐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="post-menu-btn" title="Tùy chọn">•••</button>
+                </div>
+
+                <div class="post-caption">
+                    💡 <strong>Tips CSS quan trọng:</strong> Khi sử dụng <code>position: fixed</code> cho Header, bạn cần lưu ý đặt thuộc tính <code>top: 0; left: 0; width: 100%;</code> và đừng quên tạo khoảng cách <code>margin-top</code> hoặc <code>padding-top</code> cho phần thân trang để nội dung không bị Header che mất!
+                </div>
+
+                <div class="post-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&h=650&q=80" alt="Học lập trình nhóm" class="post-image">
+                </div>
+
+                <div class="post-stats">
+                    <div class="reactions-count">
+                        <span class="reaction-badge like-badge">👍</span>
+                        <span class="reaction-badge heart-badge">❤️</span>
+                        <span class="stats-text">389</span>
+                    </div>
+                    <div class="comments-shares-count">
+                        <span>45 bình luận</span> · <span>18 lượt chia sẻ</span>
+                    </div>
+                </div>
+
+                <hr class="card-divider">
+
+                <div class="post-actions">
+                    <button class="post-btn">
+                        <span>👍</span> Thích
+                    </button>
+                    <button class="post-btn">
+                        <span>💬</span> Bình luận
+                    </button>
+                    <button class="post-btn">
+                        <span>↗️</span> Chia sẻ
+                    </button>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- ==================== 4. SIDEBAR PHẢI (RIGHT SIDEBAR) ==================== -->
+        <aside class="sidebar sidebar-right">
+            <!-- Phần Được tài trợ / Quảng cáo -->
+            <div class="sidebar-heading">Được tài trợ</div>
+            <div class="sponsored-item">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=120&h=80&q=80" alt="Khóa học Backend" class="sponsored-thumb">
+                <div class="sponsored-text">
+                    <div class="sponsored-title">Khóa học Lập trình Java Spring Boot</div>
+                    <div class="sponsored-link">codegym.vn</div>
+                </div>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <!-- Danh bạ người liên hệ (Contacts) -->
+            <div class="contacts-header">
+                <div class="sidebar-heading">Người liên hệ</div>
+                <div class="contacts-tools">
+                    <button class="tool-btn" title="Cuộc gọi mới">📹</button>
+                    <button class="tool-btn" title="Tìm kiếm bạn bè">🔍</button>
+                    <button class="tool-btn" title="Tùy chọn">•••</button>
+                </div>
+            </div>
+
+            <ul class="contacts-list">
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=80&h=80&q=80" alt="Contact" class="avatar-small">
+                        <span class="online-dot"></span>
+                    </div>
+                    <span class="contact-name">Nguyễn Văn An</span>
+                </li>
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=80&h=80&q=80" alt="Contact" class="avatar-small">
+                        <span class="online-dot"></span>
+                    </div>
+                    <span class="contact-name">Trần Thị Mai</span>
+                </li>
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=80&h=80&q=80" alt="Contact" class="avatar-small">
+                        <span class="online-dot"></span>
+                    </div>
+                    <span class="contact-name">Lê Hoàng Nam</span>
+                </li>
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&h=80&q=80" alt="Contact" class="avatar-small">
+                        <span class="online-dot"></span>
+                    </div>
+                    <span class="contact-name">Phạm Quốc Bảo</span>
+                </li>
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80" alt="Contact" class="avatar-small">
+                        <span class="online-dot"></span>
+                    </div>
+                    <span class="contact-name">Đặng Thuỳ Linh</span>
+                </li>
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=80&h=80&q=80" alt="Contact" class="avatar-small">
+                        <span class="online-dot"></span>
+                    </div>
+                    <span class="contact-name">Vũ Minh Đức</span>
+                </li>
+            </ul>
+
+            <hr class="sidebar-divider">
+
+            <!-- Cuộc trò chuyện nhóm -->
+            <div class="sidebar-heading">Cuộc trò chuyện nhóm</div>
+            <ul class="contacts-list">
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <div class="group-icon-thumb">👥</div>
+                    </div>
+                    <span class="contact-name">Lớp C0823H1 - CodeGym</span>
+                </li>
+                <li class="contact-item">
+                    <div class="contact-avatar-wrapper">
+                        <div class="group-icon-thumb">💻</div>
+                    </div>
+                    <span class="contact-name">Nhóm Đồ Án Tốt Nghiệp</span>
+                </li>
+            </ul>
+        </aside>
+
+    </div>
+
+</body>
+</html>

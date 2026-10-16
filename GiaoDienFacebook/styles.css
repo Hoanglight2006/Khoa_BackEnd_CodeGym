@@ -1,0 +1,829 @@
+/* ==========================================================================
+   GIAO DIỆN FACEBOOK GIẢN LƯỢC - CSS
+   Mục tiêu: Thiết kế Fixed Header và Sidebar cố định
+   ========================================================================== */
+
+/* 1. RESET VÀ THIẾT LẬP TOÀN CỤC */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+:root {
+    --fb-blue: #1877f2;
+    --fb-blue-hover: #166fe5;
+    --bg-page: #f0f2f5;
+    --bg-white: #ffffff;
+    --bg-hover: #e4e6eb;
+    --bg-secondary-btn: #e4e6eb;
+    --text-primary: #050505;
+    --text-secondary: #65676b;
+    --border-color: #ced0d4;
+    --divider-color: #e4e6eb;
+    --online-green: #31a24c;
+    --header-height: 56px;
+    --sidebar-width: 320px;
+    --feed-width: 680px;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Custom thanh cuộn đẹp mắt cho sidebar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #bcc0c4;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8b8d90;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* ==========================================================================
+   2. FIXED HEADER (CỐ ĐỊNH Ở TRÊN CÙNG)
+   - Sử dụng position: fixed để header luôn cố định khi cuộn trang
+   - top: 0, left: 0, width: 100%
+   - z-index: 1000 để nằm đè lên nội dung bên dưới
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+/* Header Bên Trái: Logo & Thanh tìm kiếm */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 320px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    transition: transform 0.15s ease;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-hover);
+    border-radius: 50px;
+    padding: 9px 12px;
+    gap: 8px;
+    width: 240px;
+    transition: background 0.2s;
+}
+
+.search-box:focus-within {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px var(--fb-blue);
+}
+
+.search-icon {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    color: var(--text-primary);
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Header Ở Giữa: Tab Điều Hướng Chính */
+.header-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 2;
+    max-width: 640px;
+}
+
+.nav-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    color: var(--text-secondary);
+    border-bottom: 3px solid transparent;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 8px;
+    margin: 4px 2px;
+}
+
+.nav-tab:hover {
+    background-color: var(--bg-hover);
+    border-radius: 8px;
+}
+
+.nav-tab.active {
+    color: var(--fb-blue);
+    border-bottom: 3px solid var(--fb-blue);
+    border-radius: 0;
+}
+
+.nav-tab.active:hover {
+    background-color: transparent;
+}
+
+/* Header Bên Phải: Nút tiện ích & Avatar */
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex: 1;
+    max-width: 320px;
+}
+
+.circle-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    position: relative;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.circle-btn:hover {
+    background-color: #d8dadf;
+}
+
+.circle-btn:active {
+    transform: scale(0.96);
+}
+
+.circle-btn .badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background-color: #e41e3f;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    border: 2px solid white;
+}
+
+.user-avatar-header {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.user-avatar-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   3. BỐ CỤC CHÍNH (MAIN LAYOUT)
+   ========================================================================== */
+.main-layout {
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--header-height); /* Bù chiều cao cho fixed header */
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   4. CÁC PHẦN SIDEBAR (CỐ ĐỊNH Ở 2 BÊN)
+   - position: fixed
+   - top: var(--header-height)
+   - height: calc(100vh - var(--header-height))
+   - overflow-y: auto để cuộn độc lập khi nội dung dài
+   ========================================================================== */
+.sidebar {
+    position: fixed;
+    top: var(--header-height);
+    width: var(--sidebar-width);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
+    padding: 16px 8px;
+    z-index: 10;
+}
+
+/* Sidebar Trái */
+.sidebar-left {
+    left: 0;
+}
+
+/* Sidebar Phải */
+.sidebar-right {
+    right: 0;
+}
+
+/* Danh mục trong Sidebar */
+.sidebar-menu {
+    list-style: none;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.menu-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.menu-text {
+    color: var(--text-primary);
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.avatar-small {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.icon-wrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: #f0f2f5;
+}
+
+.circle-more {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-secondary-btn);
+    font-size: 11px;
+}
+
+.shortcut-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid var(--divider-color);
+    margin: 12px 10px;
+}
+
+.sidebar-heading {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 6px 10px;
+}
+
+.sidebar-footer {
+    padding: 16px 10px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Sidebar Phải: Quảng cáo & Danh bạ */
+.sponsored-item {
+    display: flex;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.sponsored-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.sponsored-thumb {
+    width: 100px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.sponsored-title {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.sponsored-link {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.contacts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contacts-tools {
+    display: flex;
+    gap: 4px;
+}
+
+.tool-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--text-secondary);
+    transition: background 0.2s;
+}
+
+.tool-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+.contacts-list {
+    list-style: none;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.contact-item:hover {
+    background-color: var(--bg-hover);
+}
+
+.contact-avatar-wrapper {
+    position: relative;
+    width: 36px;
+    height: 36px;
+}
+
+.online-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background-color: var(--online-green);
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.group-icon-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary-btn);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.contact-name {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   5. NỘI DUNG CHÍNH (NEWS FEED)
+   - Chiếm khu vực ở giữa màn hình
+   - Căn lề margin-left và margin-right tương ứng với độ rộng của 2 sidebar
+   - max-width: 680px để bài viết vừa vặn tầm mắt
+   ========================================================================== */
+.feed-content {
+    margin-left: var(--sidebar-width);
+    margin-right: var(--sidebar-width);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px 40px 16px;
+    min-height: 150vh; /* Giả lập nội dung dài để thử nghiệm cuộn trang */
+}
+
+/* Thẻ chung (Cards) */
+.card {
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: var(--feed-width);
+    margin-bottom: 16px;
+}
+
+.card-divider {
+    border: none;
+    border-top: 1px solid var(--divider-color);
+    margin: 8px 16px;
+}
+
+/* Story / Tin */
+.stories-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: var(--feed-width);
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.story-card {
+    width: 112px;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    background-color: #000;
+}
+
+.story-card:hover {
+    transform: scale(1.02);
+}
+
+.story-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+    transition: transform 0.3s;
+}
+
+.story-card:hover .story-bg {
+    transform: scale(1.05);
+}
+
+.story-avatar {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 3px solid var(--fb-blue);
+    overflow: hidden;
+    z-index: 2;
+}
+
+.story-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-author {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+}
+
+/* Thẻ tạo story của riêng mình */
+.create-story {
+    background-color: var(--bg-white);
+}
+
+.story-bg-top {
+    height: 140px;
+    overflow: hidden;
+}
+
+.story-bg-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.create-story:hover .story-bg-top img {
+    transform: scale(1.05);
+}
+
+.create-story-btn {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: var(--fb-blue);
+    color: white;
+    border-radius: 50%;
+    border: 4px solid var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.create-story .story-author {
+    color: var(--text-primary);
+    text-shadow: none;
+    text-align: center;
+    bottom: 8px;
+}
+
+/* Hộp Tạo bài viết mới */
+.create-post-card {
+    padding: 12px 16px 8px 16px;
+}
+
+.create-post-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-input-box {
+    background-color: var(--bg-hover);
+    border-radius: 50px;
+    padding: 10px 16px;
+    flex: 1;
+    color: var(--text-secondary);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.post-input-box:hover {
+    background-color: #d8dadf;
+}
+
+.create-post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+/* Thẻ Bài Viết (Post Card) */
+.post-card {
+    padding: 12px 0;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px 10px 16px;
+}
+
+.post-user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-author-name {
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.post-tag {
+    font-weight: normal;
+    color: var(--text-secondary);
+    margin-left: 4px;
+}
+
+.verified-badge {
+    color: var(--fb-blue);
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.post-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.post-menu-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-size: 18px;
+    letter-spacing: 2px;
+    transition: background-color 0.2s;
+}
+
+.post-menu-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+.post-caption {
+    padding: 4px 16px 12px 16px;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.post-caption code {
+    background-color: #e4e6eb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #c4183c;
+}
+
+.post-image-wrapper {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.post-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px 4px 16px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.reactions-count {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.reaction-badge {
+    font-size: 14px;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 4px 16px 0 16px;
+}
+
+.post-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.post-btn:hover {
+    background-color: var(--bg-hover);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (TƯƠNG THÍCH MÀN HÌNH NHỎ HƠN)
+   ========================================================================== */
+@media (max-width: 1180px) {
+    /* Ẩn sidebar bên phải khi màn hình < 1180px */
+    .sidebar-right {
+        display: none;
+    }
+    .feed-content {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    /* Ẩn sidebar bên trái khi màn hình < 900px (dạng tablet/mobile) */
+    .sidebar-left {
+        display: none;
+    }
+    .feed-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .header-middle {
+        display: none; /* Thu gọn thanh điều hướng giữa trên màn hình hẹp */
+    }
+}
