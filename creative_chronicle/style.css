@@ -1,0 +1,205 @@
+/* ==========================================================================
+   CREATIVECHRONICLE - MAGAZINE DETAIL REFACTORING
+   1. Author Info: Flexbox căn giữa dọc (1D)
+   2. Mosaic Gallery: CSS Grid đa hàng đa cột (2D)
+   3. Recommended Articles: Bootstrap 12 cột chuẩn hóa
+   ========================================================================== */
+
+/* 1. THIẾT LẬP CHUNG */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1f2937;
+    background-color: #ffffff;
+    line-height: 1.7;
+}
+
+.article-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.category-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #4f46e5;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo-mark {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.logo-text {
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   2. VÙNG 1: THÔNG TIN TÁC GIẢ (FLEXBOX VERTICAL ALIGNMENT)
+   - Thay thế toàn bộ float và overflow: hidden
+   - Căn giữa dọc (align-items: center) hoàn hảo
+   ========================================================================== */
+.author-section-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    flex-wrap: wrap;     /* Rớt dòng mượt mà trên mobile */
+    gap: 16px;           /* Dùng gap thay vì margin float lộn xộn */
+}
+
+.author-profile {
+    display: flex;
+    align-items: center; /* Căn giữa Avatar với dòng Tên tác giả */
+    gap: 14px;
+}
+
+.author-avatar-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.author-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* ==========================================================================
+   3. VÙNG 2: THƯ VIỆN ẢNH KHẢM (MOSAIC GALLERY - CSS GRID 2D)
+   - Xóa bỏ position: absolute và height: 400px cứng
+   - Ảnh chính chiếm 2 hàng, 2 ảnh phụ xếp chồng bên phải
+   - Sử dụng object-fit: cover chống méo hình
+   ========================================================================== */
+.mosaic-gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;         /* Cột chính 2 phần, cột phụ 1 phần */
+    grid-template-rows: repeat(2, 230px);   /* 2 hàng cân đối */
+    gap: 16px;                              /* Khoảng cách rãnh giữa các ô */
+    width: 100%;
+}
+
+.mosaic-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.mosaic-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ nguyên tỉ lệ hình ảnh, không bị méo */
+    display: block;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.mosaic-item:hover .mosaic-img {
+    transform: scale(1.04);
+    opacity: 0.95;
+}
+
+/* Ứng dụng CSS Grid: Ảnh chính lớn chiếm 2 hàng */
+.photo-main {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3; /* Chiếm trọn từ hàng 1 đến hàng 3 */
+}
+
+/* Ảnh phụ 1: Hàng trên cột 2 */
+.photo-sub-1 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+/* Ảnh phụ 2: Hàng dưới cột 2 */
+.photo-sub-2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.mosaic-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   4. THÂN BÀI VIẾT (ARTICLE BODY)
+   ========================================================================== */
+.lead-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #374151;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   5. VÙNG 3: BÀI VIẾT ĐỀ XUẤT (BOOTSTRAP CARD STYLES)
+   ========================================================================== */
+.article-card-bs {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: #ffffff;
+    border: 1px solid #f3f4f6 !important;
+}
+
+.article-card-bs:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN & STRESS TEST UI
+   ========================================================================== */
+
+/* Mobile (Màn hình nhỏ <= 768px) */
+@media screen and (max-width: 768px) {
+    .author-section-flex {
+        flex-direction: column;
+        align-items: flex-start; /* Xếp chồng thông tin tác giả và nút share */
+    }
+
+    .share-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    /* Mosaic Gallery chuyển thành dạng 1 cột dọc (Stacking) */
+    .mosaic-gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .photo-main,
+    .photo-sub-1,
+    .photo-sub-2 {
+        grid-column: auto;
+        grid-row: auto;
+        height: 250px; /* Chiều cao thích hợp khi xem trên điện thoại */
+    }
+}

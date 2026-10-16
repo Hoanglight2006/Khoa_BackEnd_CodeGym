@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự Chuyển Mình Của Nghệ Thuật Đương Đại - CreativeChronicle Magazine</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google Fonts Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Tạp chí -->
+    <header class="magazine-nav py-3 border-bottom bg-white sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="brand-logo text-decoration-none text-dark">
+                <span class="logo-mark">CC</span>
+                <span class="logo-text">Creative<strong>Chronicle</strong></span>
+            </a>
+            <span class="badge bg-dark-subtle text-dark border px-3 py-2 rounded-pill small">Art & Culture Weekly</span>
+        </div>
+    </header>
+
+    <div class="container article-container my-5">
+        
+        <!-- Tiêu đề bài viết -->
+        <header class="article-header mb-4">
+            <div class="category-tag mb-2">TRIỂN LÃM & ĐƯƠNG ĐẠI</div>
+            <h1 class="article-title display-5 fw-bold text-dark">
+                Sự Chuyển Mình Của Nghệ Thuật Đương Đại Trong Kỷ Nguyên Số
+            </h1>
+            <p class="article-subtitle lead text-muted">
+                Khi công nghệ thuật toán và trí tuệ nhân tạo trở thành cây cọ vẽ mới, các nghệ sĩ đương đại đang tái định nghĩa lại khái niệm về không gian và cảm xúc thị giác.
+            </p>
+        </header>
+
+        <!-- ==========================================================================
+             VÙNG 1: THÔNG TIN TÁC GIẢ (ÁP DỤNG FLEXBOX - 1D VERTICAL ALIGNMENT)
+             Giải pháp: Gỡ bỏ float và overflow: hidden.
+             Sử dụng display: flex; align-items: center; justify-content: space-between;
+             Đảm bảo Avatar, Tên tác giả và Nút chia sẻ luôn thẳng hàng hoàn hảo.
+             ========================================================================== -->
+        <section class="author-section-flex py-3 mb-4 border-top border-bottom">
+            <!-- Cụm bên trái: Avatar và Tên tác giả (Flexbox lồng nhau) -->
+            <div class="author-profile">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" 
+                     alt="Jane Doe" 
+                     class="author-avatar-img">
+                <div class="author-meta">
+                    <h5 class="author-name mb-0">Jane Doe</h5>
+                    <small class="text-muted">Senior Art Critic · Đăng ngày 25 Tháng 10, 2026 · 6 phút đọc</small>
+                </div>
+            </div>
+
+            <!-- Cụm bên phải: Nút chia sẻ mạng xã hội -->
+            <div class="share-actions d-flex gap-2 align-items-center">
+                <button class="btn btn-outline-primary btn-sm rounded-pill px-3 d-flex align-items-center gap-1">
+                    <i class="bi bi-facebook"></i> Share
+                </button>
+                <button class="btn btn-outline-info btn-sm rounded-pill px-3 d-flex align-items-center gap-1">
+                    <i class="bi bi-twitter-x"></i> Post
+                </button>
+                <button class="btn btn-outline-secondary btn-sm rounded-pill px-2" title="Bookmark">
+                    <i class="bi bi-bookmark"></i>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ==========================================================================
+             VÙNG 2: THƯ VIỆN ẢNH KHẢM (MOSAIC GALLERY - ÁP DỤNG CSS GRID 2D)
+             Giải pháp: Xóa sạch position: absolute và height: 400px cứng nhắc.
+             Sử dụng CSS Grid (grid-template-columns: 2fr 1fr; gap: 16px;).
+             Ảnh chính chiếm 2 hàng (grid-row: span 2). Tự động co giãn 1 cột trên Mobile.
+             Không bao giờ làm mất chiều cao thực tế, không đè lấn lên văn bản bên dưới!
+             ========================================================================== -->
+        <section class="mosaic-gallery-grid mb-5">
+            <!-- Ảnh chính lớn bên trái: Chiếm 2 hàng trong Grid -->
+            <div class="mosaic-item photo-main">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=1000&q=80" 
+                     alt="Không gian nghệ thuật ánh sáng tương tác" 
+                     class="mosaic-img">
+                <div class="mosaic-caption">
+                    <span>Tác phẩm ánh sáng "Infinite Horizon" tại Triển lãm Venice Biennale 2026</span>
+                </div>
+            </div>
+
+            <!-- Ảnh phụ 1: Góc trên bên phải -->
+            <div class="mosaic-item photo-sub-1">
+                <img src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=600&q=80" 
+                     alt="Chi tiết màu acrylic trên toan" 
+                     class="mosaic-img">
+                <div class="mosaic-caption">
+                    <span>Cấu trúc trừu tượng đơn sắc</span>
+                </div>
+            </div>
+
+            <!-- Ảnh phụ 2: Góc dưới bên phải -->
+            <div class="mosaic-item photo-sub-2">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" 
+                     alt="Tượng điêu khắc đương đại" 
+                     class="mosaic-img">
+                <div class="mosaic-caption">
+                    <span>Nghệ thuật điêu khắc khối hình học</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Nội dung bài viết chính (Kiểm chứng triệt để lỗi đè lấn text trước đây) -->
+        <article class="article-body mb-5">
+            <p class="lead-text">
+                Không giống như các kỹ thuật dàn trang cổ điển trước đây vốn dựa dẫm vào <code>position: absolute</code> khiến phần tử cha bị rút cạn chiều cao và đè bẹp lên nội dung chữ, các kiến trúc sư Front-end hiện đại sử dụng <strong>CSS Grid</strong> để bảo toàn toàn vẹn dòng chảy tài liệu (Document Flow).
+            </p>
+            <p>
+                Nghệ thuật thị giác trong thập kỷ này chứng kiến một sự giao thoa chưa từng có giữa bàn tay con người và sự can thiệp của các thuật toán xử lý tạo sinh. Người thưởng ngoạn không còn đóng vai trò là một khán giả thụ động đứng chiêm ngưỡng những khung tranh tĩnh, mà họ bước vào bên trong, thở cùng nhịp điệu của ánh sáng và tạo ra những biến thể tác phẩm độc nhất vô nhị.
+            </p>
+        </article>
+
+
+        <!-- ==========================================================================
+             VÙNG 3: BÀI VIẾT ĐỀ XUẤT (RECOMMENDED ARTICLES - BOOTSTRAP 5 GRID)
+             Giải pháp: Thay thế float: left và width: 23% bằng hệ thống lưới 12 cột:
+             <div class="row g-4"> và <div class="col-12 col-md-6 col-lg-3">.
+             Tự động Responsive: 4 thẻ trên Desktop, 2 thẻ trên Tablet, 1 thẻ trên Mobile.
+             ========================================================================== -->
+        <section class="recommended-section-bs mt-5 pt-4 border-top">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold fs-4 mb-0">Bài Viết Đề Xuất Dành Cho Bạn</h3>
+                <a href="#" class="text-decoration-none fw-semibold small text-primary">Xem tất cả &rarr;</a>
+            </div>
+
+            <div class="row g-4">
+                
+                <!-- Bài 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden article-card-bs">
+                        <img src="https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?auto=format&fit=crop&w=500&q=80" 
+                             class="card-img-top object-fit-cover" 
+                             alt="Thiết kế Tối giản" style="height: 180px;">
+                        <div class="card-body d-flex flex-column p-3">
+                            <span class="badge bg-secondary-subtle text-secondary-emphasis w-auto align-self-start mb-2">KIẾN TRÚC</span>
+                            <h4 class="card-title h6 fw-bold mb-2">Triết Lý Tối Giản Trong Không Gian Nghệ Thuật</h4>
+                            <p class="card-text text-muted small flex-grow-1">Khi sự giản lược đến cùng cực lại mở ra chiều sâu cảm xúc bất tận.</p>
+                            <span class="text-muted small mt-2">5 phút đọc · 1.8k lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden article-card-bs">
+                        <img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=500&q=80" 
+                             class="card-img-top object-fit-cover" 
+                             alt="Hội họa Trừu tượng" style="height: 180px;">
+                        <div class="card-body d-flex flex-column p-3">
+                            <span class="badge bg-primary-subtle text-primary-emphasis w-auto align-self-start mb-2">HỘI HỌA</span>
+                            <h4 class="card-title h6 fw-bold mb-2">Khám Phá Sức Mạnh Biểu Cảm Của Màu Sắc</h4>
+                            <p class="card-text text-muted small flex-grow-1">Những gam màu đối lập có thể thay đổi tâm lý người xem như thế nào?</p>
+                            <span class="text-muted small mt-2">8 phút đọc · 2.4k lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden article-card-bs">
+                        <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=500&q=80" 
+                             class="card-img-top object-fit-cover" 
+                             alt="Bảo tàng Nghệ thuật" style="height: 180px;">
+                        <div class="card-body d-flex flex-column p-3">
+                            <span class="badge bg-success-subtle text-success-emphasis w-auto align-self-start mb-2">DI SẢN</span>
+                            <h4 class="card-title h6 fw-bold mb-2">Bảo Tàng Số: Lưu Trữ Hiện Vật Bằng Công Nghệ 3D</h4>
+                            <p class="card-text text-muted small flex-grow-1">Hồi sinh các cổ vật hàng ngàn năm tuổi qua những bản quét thực tế ảo.</p>
+                            <span class="text-muted small mt-2">6 phút đọc · 3.1k lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bài 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden article-card-bs">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=500&q=80" 
+                             class="card-img-top object-fit-cover" 
+                             alt="Điêu khắc gốm" style="height: 180px;">
+                        <div class="card-body d-flex flex-column p-3">
+                            <span class="badge bg-warning-subtle text-warning-emphasis w-auto align-self-start mb-2">THỦ CÔNG</span>
+                            <h4 class="card-title h6 fw-bold mb-2">Nghệ Thuật Gốm Đương Đại: Khi Đất Sét Kể Chuyện</h4>
+                            <p class="card-text text-muted small flex-grow-1">Bàn tay nghệ nhân kết hợp các kỹ thuật tráng men mang hơi thở hiện đại.</p>
+                            <span class="text-muted small mt-2">4 phút đọc · 1.5k lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 border-top text-center text-muted small">
+        <p class="mb-0">&copy; 2026 CreativeChronicle Magazine · Dự án Tái Cấu Trúc Bố Cục Flexbox, CSS Grid & Bootstrap 5.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
