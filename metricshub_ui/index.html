@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetricsHub Admin Dashboard - Tối Ưu Bố Cục Flexbox, Grid & Bootstrap</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- File CSS tùy biến sạch sẽ -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         KHU VỰC 1: NAVBAR (ÁP DỤNG FLEXBOX - 1 CHIỀU / CONTENT-FIRST)
+         Giải pháp: Thay thế CSS Grid cứng nhắc bằng Flexbox.
+         Tự động co giãn theo độ dài nội dung (kể cả từ tiếng Đức rất dài).
+         ========================================================================== -->
+    <header class="navbar-flex">
+        <!-- Nhóm Logo -->
+        <div class="nav-brand">
+            <span class="brand-badge">MH</span>
+            <span class="brand-name">Metrics<strong>Hub</strong></span>
+        </div>
+
+        <!-- Nhóm Menu Điều Hướng (Tự giãn cách, không bị bó cứng pixel) -->
+        <nav class="nav-links">
+            <a href="#" class="nav-item active">Dashboard</a>
+            <a href="#" class="nav-item">Analytics</a>
+            <!-- Từ tiếng Đức dài kiểm thử độ linh hoạt của Flexbox -->
+            <a href="#" class="nav-item test-german" title="Bảng điều khiển quản trị tổng quan">
+                ÜbersichtsArmaturenbrett
+            </a>
+            <a href="#" class="nav-item">Reports</a>
+            <a href="#" class="nav-item">Integrations</a>
+        </nav>
+
+        <!-- Nhóm Tiện ích / User Profile -->
+        <div class="nav-user">
+            <button class="btn-notification" title="Thông báo">🔔</button>
+            <div class="user-pill">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&h=80&q=80" alt="Avatar" class="avatar-img">
+                <span class="user-name">Alex Dương</span>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ==========================================================================
+         KHU VỰC 2: BENTO DASHBOARD (ÁP DỤNG CSS GRID - 2 CHIỀU / 2D LAYOUT)
+         Giải pháp: Dẹp bỏ hoàn toàn "Div Soup" (các thẻ .column lồng nhau).
+         Tất cả .widget là anh em ngang hàng trực tiếp (Siblings) dưới 1 grid container.
+         Sử dụng span 2 rows và span 2 columns tạo bố cục Bento Box trực quan.
+         ========================================================================== -->
+    <main class="dashboard-section">
+        <div class="container-fluid px-lg-5">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Bento Analytics Dashboard</h2>
+                    <p class="section-subtitle">Bố cục 2 chiều (CSS Grid 2D) xử lý biểu đồ bất đối xứng, không div lồng nhau</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill">● Trực tuyến: 99.98%</span>
+                </div>
+            </div>
+
+            <!-- CSS Grid Container duy nhất -->
+            <div class="bento-grid">
+                
+                <!-- Widget 1: Biểu đồ chính chiếm 2 Cột x 2 Hàng (Span 2x2) -->
+                <div class="widget widget-revenue">
+                    <div class="widget-header">
+                        <div>
+                            <span class="widget-label">DOANH THU & TĂNG TRƯỞNG QUÝ</span>
+                            <h3 class="widget-value">$148,650 <span class="trend-up">+24.5%</span></h3>
+                        </div>
+                        <span class="widget-icon-box bg-primary-soft">📈</span>
+                    </div>
+                    <div class="chart-mockup-area">
+                        <!-- Giả lập biểu đồ cột thanh lịch -->
+                        <div class="chart-bars">
+                            <div class="bar" style="--height: 45%;"><span class="bar-tag">T1</span></div>
+                            <div class="bar" style="--height: 60%;"><span class="bar-tag">T2</span></div>
+                            <div class="bar" style="--height: 75%;"><span class="bar-tag">T3</span></div>
+                            <div class="bar" style="--height: 50%;"><span class="bar-tag">T4</span></div>
+                            <div class="bar" style="--height: 85%;"><span class="bar-tag">T5</span></div>
+                            <div class="bar active-bar" style="--height: 98%;"><span class="bar-tag">T6</span></div>
+                        </div>
+                    </div>
+                    <div class="widget-footer">
+                        <span>Dữ liệu tính đến ngày hôm nay</span>
+                        <a href="#" class="view-link">Xem chi tiết &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Widget 2: Khách hàng mới (1x1) -->
+                <div class="widget">
+                    <div class="widget-header">
+                        <div>
+                            <span class="widget-label">KHÁCH HÀNG MỚI</span>
+                            <h3 class="widget-value">3,420</h3>
+                        </div>
+                        <span class="widget-icon-box bg-info-soft">👥</span>
+                    </div>
+                    <p class="widget-desc text-muted">+18.2% so với tháng trước</p>
+                    <div class="progress-mini">
+                        <div class="progress-fill" style="width: 78%;"></div>
+                    </div>
+                </div>
+
+                <!-- Widget 3: Tỉ lệ chuyển đổi (1x1) -->
+                <div class="widget">
+                    <div class="widget-header">
+                        <div>
+                            <span class="widget-label">TỈ LỆ CHUYỂN ĐỔI</span>
+                            <h3 class="widget-value">4.85%</h3>
+                        </div>
+                        <span class="widget-icon-box bg-warning-soft">🎯</span>
+                    </div>
+                    <p class="widget-desc text-muted">Vượt mục tiêu KPI quý (4.0%)</p>
+                    <div class="progress-mini">
+                        <div class="progress-fill bg-warning" style="width: 88%;"></div>
+                    </div>
+                </div>
+
+                <!-- Widget 4: Uptime & Server Latency (Chiếm 1 Cột x 1 Hàng) -->
+                <div class="widget">
+                    <div class="widget-header">
+                        <div>
+                            <span class="widget-label">ĐỘ TRỄ HỆ THỐNG</span>
+                            <h3 class="widget-value">24ms</h3>
+                        </div>
+                        <span class="widget-icon-box bg-success-soft">⚡</span>
+                    </div>
+                    <p class="widget-desc text-success">✓ 100% Request phản hồi ổn định</p>
+                </div>
+
+                <!-- Widget 5: Hoạt động API gần đây (Chiếm 2 Cột) -->
+                <div class="widget widget-span-2">
+                    <div class="widget-header">
+                        <div>
+                            <span class="widget-label">NHẬT KÝ SỰ KIỆN HỆ THỐNG (API LOGS)</span>
+                            <div class="api-event">
+                                <span class="status-dot green"></span>
+                                <span>[200 OK] Webhook Stripe thanh toán gói Enterprise thành công</span>
+                                <span class="time-stamp">2 phút trước</span>
+                            </div>
+                            <div class="api-event">
+                                <span class="status-dot blue"></span>
+                                <span>[201 CREATED] Tài khoản người dùng mới tạo qua Google OAuth</span>
+                                <span class="time-stamp">15 phút trước</span>
+                            </div>
+                        </div>
+                        <span class="widget-icon-box bg-purple-soft">🛡️</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ==========================================================================
+         KHU VỰC 3: BẢNG GIÁ (PRICING - ÁP DỤNG BOOTSTRAP 5 LƯỚI 12 CỘT)
+         Giải pháp: Loại bỏ hoàn toàn Media Queries tự viết tay và float: left lộn xộn.
+         Sử dụng lưới chuẩn: container > row > col-12 col-md-4 kết hợp Bootstrap Cards.
+         ========================================================================== -->
+    <section class="pricing-section py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge bg-primary px-3 py-2 rounded-pill text-uppercase tracking-wider">Bảng Giá Đơn Giản</span>
+                <h2 class="display-6 fw-bold mt-2">Bảng Giá Dịch Vụ MetricsHub</h2>
+                <p class="text-muted lead">Triển khai nhanh bằng hệ thống lưới 12 cột chuẩn hóa của Bootstrap (Không CSS thuần dư thừa)</p>
+            </div>
+
+            <!-- Lưới Bootstrap 12 cột tự động Responsive: 1 cột trên Mobile, 3 cột trên Tablet/Desktop -->
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Gói 1: Starter -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 fw-bold text-secondary">Gói Cơ Bản (Starter)</h3>
+                            <div class="my-3">
+                                <span class="display-5 fw-bold">$29</span>
+                                <span class="text-muted">/tháng</span>
+                            </div>
+                            <p class="text-muted small">Phù hợp cho các nhóm nhỏ và dự án cá nhân mới khởi đầu.</p>
+                            <hr class="my-3">
+                            <ul class="list-unstyled mb-4 flex-grow-1">
+                                <li class="mb-2">✓ Tối đa 5 Dự án hoạt động</li>
+                                <li class="mb-2">✓ Lưu trữ dữ liệu trong 30 ngày</li>
+                                <li class="mb-2">✓ Báo cáo xuất dạng CSV</li>
+                                <li class="mb-2 text-muted">✗ Tùy chỉnh Webhooks nâng cao</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 py-2 rounded-pill fw-semibold">Bắt đầu dùng thử</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gói 2: Pro (Nổi bật) -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 border-primary border-2 shadow rounded-4 p-4 position-relative bg-white">
+                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary px-3 py-2">
+                            ĐƯỢC CHỌN NHIỀU NHẤT
+                        </span>
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 fw-bold text-primary">Gói Nâng Cao (Pro)</h3>
+                            <div class="my-3">
+                                <span class="display-5 fw-bold">$79</span>
+                                <span class="text-muted">/tháng</span>
+                            </div>
+                            <p class="text-muted small">Tối ưu cho doanh nghiệp vừa và các team Product đang tăng trưởng.</p>
+                            <hr class="my-3">
+                            <ul class="list-unstyled mb-4 flex-grow-1">
+                                <li class="mb-2">✓ Không giới hạn Dự án</li>
+                                <li class="mb-2">✓ Lưu trữ dữ liệu trong 1 năm</li>
+                                <li class="mb-2">✓ Bảng điều khiển Bento Box cao cấp</li>
+                                <li class="mb-2">✓ Hỗ trợ kỹ thuật 24/7 qua Slack</li>
+                            </ul>
+                            <button class="btn btn-primary w-100 py-2 rounded-pill fw-semibold shadow-sm">Nâng cấp gói Pro</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gói 3: Enterprise -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 p-4">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="h5 fw-bold text-secondary">Gói Doanh Nghiệp (Enterprise)</h3>
+                            <div class="my-3">
+                                <span class="display-5 fw-bold">$199</span>
+                                <span class="text-muted">/tháng</span>
+                            </div>
+                            <p class="text-muted small">Bảo mật đa tầng, SLA 99.99% cho tập đoàn quy mô lớn.</p>
+                            <hr class="my-3">
+                            <ul class="list-unstyled mb-4 flex-grow-1">
+                                <li class="mb-2">✓ Tất cả tính năng của gói Pro</li>
+                                <li class="mb-2">✓ Dedicated Server riêng biệt</li>
+                                <li class="mb-2">✓ Đăng nhập một lần SSO (SAML/Okta)</li>
+                                <li class="mb-2">✓ Hợp đồng cam kết SLA cao nhất</li>
+                            </ul>
+                            <button class="btn btn-outline-dark w-100 py-2 rounded-pill fw-semibold">Liên hệ Sales</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center text-muted small bg-white border-top">
+        <p class="mb-0">&copy; 2026 MetricsHub - Bài tập kiến trúc dàn trang: Flexbox (1D), CSS Grid (2D) và Bootstrap 12 cột.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
